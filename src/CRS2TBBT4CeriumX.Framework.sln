@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Bootloader", "CeriumX.Framework.Bootloader\src\CeriumX.Framework.Bootloader.csproj", "{AF9327F5-BBE6-4333-BF78-FAFE601F6ABE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{59B2010A-9A8C-4449-9E68-FC982DEA1CA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Core.Abstractions", "Core\CeriumX.Framework.Core.Abstractions\src\CeriumX.Framework.Core.Abstractions.csproj", "{4FD88254-028E-4D51-A14C-CBB2B661C853}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Core", "Core\CeriumX.Framework.Core\src\CeriumX.Framework.Core.csproj", "{B969F250-DA1A-4160-8517-69E7646267EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Core.WebExtensions", "Core\CeriumX.Framework.Core.WebExtensions\src\CeriumX.Framework.Core.WebExtensions.csproj", "{63ADCB27-3A99-4F44-8371-0BF842D726C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Core.WPFExtensions", "Core\CeriumX.Framework.Core.WPFExtensions\src\CeriumX.Framework.Core.WPFExtensions.csproj", "{CF1EAD9A-E289-4F8E-9659-581CA00252C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Core.WinFormExtensions", "Core\CeriumX.Framework.Core.WinFormExtensions\src\CeriumX.Framework.Core.WinFormExtensions.csproj", "{CFBA28AC-B4DD-406E-86AA-50B075D23615}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modularity", "Modularity", "{753E7C67-D4CF-4C94-A903-B71DB95061E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Modularity.Abstractions", "Modularity\CeriumX.Framework.Modularity.Abstractions\src\CeriumX.Framework.Modularity.Abstractions.csproj", "{C765D257-2015-40B8-9CBD-B6C0943EAD8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CeriumX.Framework.Modularity", "Modularity\CeriumX.Framework.Modularity\src\CeriumX.Framework.Modularity.csproj", "{310610E9-F0F0-4AC5-A3E2-DCFC49E89B49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF9327F5-BBE6-4333-BF78-FAFE601F6ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF9327F5-BBE6-4333-BF78-FAFE601F6ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF9327F5-BBE6-4333-BF78-FAFE601F6ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF9327F5-BBE6-4333-BF78-FAFE601F6ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FD88254-028E-4D51-A14C-CBB2B661C853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FD88254-028E-4D51-A14C-CBB2B661C853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FD88254-028E-4D51-A14C-CBB2B661C853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FD88254-028E-4D51-A14C-CBB2B661C853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B969F250-DA1A-4160-8517-69E7646267EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B969F250-DA1A-4160-8517-69E7646267EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B969F250-DA1A-4160-8517-69E7646267EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B969F250-DA1A-4160-8517-69E7646267EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63ADCB27-3A99-4F44-8371-0BF842D726C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63ADCB27-3A99-4F44-8371-0BF842D726C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63ADCB27-3A99-4F44-8371-0BF842D726C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63ADCB27-3A99-4F44-8371-0BF842D726C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1EAD9A-E289-4F8E-9659-581CA00252C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1EAD9A-E289-4F8E-9659-581CA00252C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1EAD9A-E289-4F8E-9659-581CA00252C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1EAD9A-E289-4F8E-9659-581CA00252C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBA28AC-B4DD-406E-86AA-50B075D23615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBA28AC-B4DD-406E-86AA-50B075D23615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBA28AC-B4DD-406E-86AA-50B075D23615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBA28AC-B4DD-406E-86AA-50B075D23615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C765D257-2015-40B8-9CBD-B6C0943EAD8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C765D257-2015-40B8-9CBD-B6C0943EAD8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C765D257-2015-40B8-9CBD-B6C0943EAD8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C765D257-2015-40B8-9CBD-B6C0943EAD8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310610E9-F0F0-4AC5-A3E2-DCFC49E89B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310610E9-F0F0-4AC5-A3E2-DCFC49E89B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310610E9-F0F0-4AC5-A3E2-DCFC49E89B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310610E9-F0F0-4AC5-A3E2-DCFC49E89B49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4FD88254-028E-4D51-A14C-CBB2B661C853} = {59B2010A-9A8C-4449-9E68-FC982DEA1CA2}
+		{B969F250-DA1A-4160-8517-69E7646267EA} = {59B2010A-9A8C-4449-9E68-FC982DEA1CA2}
+		{63ADCB27-3A99-4F44-8371-0BF842D726C3} = {59B2010A-9A8C-4449-9E68-FC982DEA1CA2}
+		{CF1EAD9A-E289-4F8E-9659-581CA00252C7} = {59B2010A-9A8C-4449-9E68-FC982DEA1CA2}
+		{CFBA28AC-B4DD-406E-86AA-50B075D23615} = {59B2010A-9A8C-4449-9E68-FC982DEA1CA2}
+		{C765D257-2015-40B8-9CBD-B6C0943EAD8B} = {753E7C67-D4CF-4C94-A903-B71DB95061E5}
+		{310610E9-F0F0-4AC5-A3E2-DCFC49E89B49} = {753E7C67-D4CF-4C94-A903-B71DB95061E5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40BA4520-10F9-461A-A384-466138E04242}
+	EndGlobalSection
+EndGlobal
