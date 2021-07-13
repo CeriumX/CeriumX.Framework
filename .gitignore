@@ -370,10 +370,17 @@ FodyWeavers.xsd
 ## Custom ignore item configuration information
 ########################################################################################
 # Ignorable directories - 要忽略的目录
+**/Appx4AnyCPU/*
+**/Appx4AnyCPU/extensions/*
 
 
 # Ignorable files - 要忽略的文件
 
 
 # Ignore items to include - 需要包含的项
+!**/Appx4AnyCPU/README.md
+
+!**/Appx4AnyCPU/extensions/
+!**/Appx4AnyCPU/extensions/README.md
+!**/Appx4AnyCPU/extensions/package_template.json
 
