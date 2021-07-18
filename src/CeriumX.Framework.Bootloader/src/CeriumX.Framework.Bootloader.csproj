@@ -6,7 +6,7 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<UseWPF>true</UseWPF>
 		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\..\CeriumX.Framework.snk</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>CeriumX.Framework.Bootloader.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
 		<ApplicationIcon>sys.ico</ApplicationIcon>
 		<AssemblyName>CeriumX.Bootloader</AssemblyName>
