@@ -24,7 +24,7 @@ using System;
 namespace CeriumX.Framework.Core.Abstractions
 {
     /// <summary>
-    /// The app host builder extensions.
+    /// Extension methods for <see cref = "IAppHostBuilder" />.
     /// </summary>
     public static class AppHostBuilderExtensions
     {

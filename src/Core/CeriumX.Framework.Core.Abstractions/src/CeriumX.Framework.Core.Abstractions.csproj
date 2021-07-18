@@ -7,10 +7,11 @@
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>CeriumX.Framework.Core.Abstractions.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
+		<IsPackable>true</IsPackable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<Authors>蟑螂·魂</Authors>
-		<Description>专注.Net技术栈，通过对.net 5及未来.net 6等系列源码进行研究，展开系列技术的综合应用之路。通用混合开发框架（CeriumX.Framework）因此应运而生，围绕通用主机及其系列技术，利用动态扩展、主机服务、DI容器、配置、选项、日志等功能特性，组建封装而成。通用混合开发框架可以将Asp.Net Core、WPF、WinForm、模块化、组合视图、CEF框架、WebView2、Chromium综合集成为一体，相互之间亦可实现无缝通信和数据交换。
+		<Description>专注.Net技术栈，通过对.net 5及未来.net 6等系列源码进行研究，展开系列技术的综合应用之路。通用混合开发框架（CeriumX.Framework）因此应运而生，围绕通用主机及其系列技术，利用动态扩展、托管服务、DI容器、配置、选项、日志等功能特性，组建封装而成。通用混合开发框架可以将ASP.NET Core、WPF、WinForm、模块化、组合视图、CEF框架、WebView2、Chromium综合集成为一体，相互之间亦可实现无缝通信和数据交换。
 
       当前类库为通用混合开发框架的核心抽象，定义了框架的各组成接口和公共部分，以及必要的扩展；同时还定义了一个应用程序主机单例类，以便在框架使用过程中全局调用相关功能。
 
@@ -24,7 +25,7 @@
 		<RepositoryUrl>https://github.com/CeriumX/CeriumX.Framework</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach soulful, All Rights Reserved.</Copyright>
-		<PackageTags>GenericHost 通用主机 混合开发 混合框架 Framework WPF WinForm Modularity 模块化 组合视图</PackageTags>
+		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
 		<PackageReleaseNotes>当前类库为通用混合开发框架的核心抽象，定义了框架的各组成接口和公共部分，以及必要的扩展；同时还定义了一个应用程序主机单例类，以便在框架使用过程中全局调用相关功能。</PackageReleaseNotes>
 	</PropertyGroup>
 

@@ -24,7 +24,7 @@ using System.Linq;
 namespace CeriumX.Framework.Core.Abstractions
 {
     /// <summary>
-    /// The app host extensions.
+    /// Extension methods for <see cref = "IAppHost" />.
     /// </summary>
     public static class AppHostExtensions
     {

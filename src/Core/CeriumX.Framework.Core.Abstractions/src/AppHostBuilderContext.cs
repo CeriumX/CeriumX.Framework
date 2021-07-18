@@ -33,7 +33,7 @@ namespace CeriumX.Framework.Core.Abstractions
         /// <summary>
         /// Context containing the common services on the <see cref="IAppHost" />. Some properties may be null until set by the <see cref="IAppHost" />.
         /// </summary>
-        /// <param name="hostBuilderContext"></param>
+        /// <param name="hostBuilderContext">The <see cref="HostBuilderContext" /> to <see cref="AppHostBuilderContext"/>.</param>
         internal AppHostBuilderContext(HostBuilderContext hostBuilderContext)
         {
             _hostBuilderContext = hostBuilderContext;

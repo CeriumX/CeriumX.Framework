@@ -2,10 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>CeriumX.Framework.Core.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\CeriumX.Framework.Core.Abstractions\src\CeriumX.Framework.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\..\CeriumX.Framework.Core.WebExtensions\src\CeriumX.Framework.Core.WebExtensions.csproj" />
   </ItemGroup>
 
 </Project>
