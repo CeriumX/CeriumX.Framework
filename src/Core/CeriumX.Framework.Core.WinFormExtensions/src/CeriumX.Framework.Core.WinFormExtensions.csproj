@@ -8,4 +8,8 @@
     <ProjectReference Include="..\..\CeriumX.Framework.Core.Abstractions\src\CeriumX.Framework.Core.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FormView\" />
+  </ItemGroup>
+
 </Project>

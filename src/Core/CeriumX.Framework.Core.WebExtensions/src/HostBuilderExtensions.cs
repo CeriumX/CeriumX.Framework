@@ -55,7 +55,7 @@ namespace CeriumX.Framework.Core.WebExtensions
                    })
                    .ConfigureWebHostDefaults(webBuilder =>
                    {
-                       webBuilder.UseUrls("http://*:5000")
+                       webBuilder.UseUrls("http://*:5257")
                                  .UseStartup<Startup>();
                    });
         }

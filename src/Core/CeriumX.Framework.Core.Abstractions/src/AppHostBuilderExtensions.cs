@@ -33,7 +33,7 @@ namespace CeriumX.Framework.Core.Abstractions
         /// </summary>
         /// <param name="hostBuilder">The <see cref="IAppHostBuilder" /> to configure.</param>
         /// <returns>The same instance of the <see cref="IAppHostBuilder"/> for chaining.</returns>
-        public static IAppHostBuilder ConfigureAppHostSingleInstance(this IAppHostBuilder hostBuilder)
+        public static IAppHostBuilder UseAppHostSingleInstance(this IAppHostBuilder hostBuilder)
         {
             return hostBuilder.ConfigureAppHostInstance(appHost => { AppHostInstance.SetAppHostInstance(appHost); });
         }

@@ -6,9 +6,9 @@
 //=========================================================================
 //**   Copyright © 蟑螂·魂 2021 -- Support 华夏银河空间联盟
 //=========================================================================
-// 文件名称：WebExtensionsHostedService.cs
-// 项目名称：核心 - Web扩展（CeriumX.Framework.Core.WebExtensions）
-// 创建时间：2021-07-18 16:18:31
+// 文件名称：AppHostingHostedService.cs
+// 项目名称：核心 - 实现（CeriumX.Framework.Core）
+// 创建时间：2021-07-18 23:25:16
 // 创建人员：宋杰军
 // 负责人员：宋杰军
 // 参与人员：宋杰军
@@ -17,30 +17,30 @@
 // 修改人员：
 // 修改内容：
 // ========================================================================
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace CeriumX.Framework.Core.WebExtensions
+namespace CeriumX.Framework.Core.Internal
 {
     /// <summary>
-    /// 用于在Web扩展中响应应用程序生命周期事件的托管服务
-    /// <para>Managed services for responding to application lifecycle events in web extensions.</para>
+    /// 用于在框架核心实现中响应应用程序生命周期事件的托管服务
+    /// <para>Managed services for responding to application lifecycle events in the core implementation of the framework.</para>
     /// </summary>
-    internal sealed class WebExtensionsHostedService : IHostedService
+    internal sealed class AppHostingHostedService : IHostedService
     {
-        private readonly ILogger<WebExtensionsHostedService> _logger;
+        private readonly ILogger<AppHostingHostedService> _logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebExtensionsHostedService"/> class.
+        /// Initializes a new instance of the <see cref="AppHostingHostedService"/> class.
         /// </summary>
-        /// <param name="logger">The <see cref="ILogger" /> to Web Extensions.</param>
-        /// <param name="appLifetime">The <see cref="IHostApplicationLifetime" /> to Web Extensions.</param>
-        public WebExtensionsHostedService(ILogger<WebExtensionsHostedService> logger, IHostApplicationLifetime appLifetime)
+        /// <param name="logger">The <see cref="ILogger" /> to framework core implementation.</param>
+        /// <param name="appLifetime">The <see cref="IHostApplicationLifetime" /> to framework core implementation.</param>
+        public AppHostingHostedService(ILogger<AppHostingHostedService> logger, IHostApplicationLifetime appLifetime)
         {
             _logger = logger;
-            
+
             appLifetime.ApplicationStarted.Register(OnStarted);
             appLifetime.ApplicationStopping.Register(OnStopping);
             appLifetime.ApplicationStopped.Register(OnStopped);
@@ -48,7 +48,7 @@ namespace CeriumX.Framework.Core.WebExtensions
 
 
         /// <summary>
-        /// StartAsync 事件回调函数.
+        /// StartAsync 事件回调函数
         /// </summary>
         /// <param name="cancellationToken"><seealso cref="CancellationToken"/></param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
@@ -60,7 +60,7 @@ namespace CeriumX.Framework.Core.WebExtensions
         }
 
         /// <summary>
-        /// StopAsync 事件回调函数.
+        /// StopAsync 事件回调函数
         /// </summary>
         /// <param name="cancellationToken"><seealso cref="CancellationToken"/></param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
@@ -73,7 +73,7 @@ namespace CeriumX.Framework.Core.WebExtensions
 
 
         /// <summary>
-        /// OnStarted 事件回调函数.
+        /// OnStarted 事件回调函数
         /// </summary>
         private void OnStarted()
         {
@@ -81,7 +81,7 @@ namespace CeriumX.Framework.Core.WebExtensions
         }
 
         /// <summary>
-        /// OnStopping 事件回调函数.
+        /// OnStopping 事件回调函数
         /// </summary>
         private void OnStopping()
         {
@@ -89,7 +89,7 @@ namespace CeriumX.Framework.Core.WebExtensions
         }
 
         /// <summary>
-        /// OnStopped 事件回调函数.
+        /// OnStopped 事件回调函数
         /// </summary>
         private void OnStopped()
         {

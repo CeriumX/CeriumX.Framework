@@ -17,11 +17,12 @@
 // 修改人员：
 // 修改内容：
 // ========================================================================
-//using CeriumX.Framework.Core;
-//using CeriumX.Framework.Core.Abstractions;
-//using System.Threading.Tasks;
+using CeriumX.Framework.Core;
+using CeriumX.Framework.Core.Abstractions;
 
-//return App.CreateDefaultBuilder(args)
-//                .AsSingleInstance()
-//                .Build()
-//                .StartAsync();
+await AppHost.CreateDefaultBuilder(args)
+                .UseAppHostSingleInstance()
+                .Build()
+                .StartAsync().ConfigureAwait(false);
+
+// 启动后试试访问： http://localhost:5257

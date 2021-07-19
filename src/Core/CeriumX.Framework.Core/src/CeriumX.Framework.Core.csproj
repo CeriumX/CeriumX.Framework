@@ -1,15 +1,57 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>CeriumX.Framework.Core.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<ApplicationIcon>Library.ico</ApplicationIcon>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>CeriumX.Framework.Core.snk</AssemblyOriginatorKeyFile>
+		<DelaySign>false</DelaySign>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>蟑螂·魂</Authors>
+		<Description>专注.Net技术栈，通过对.net 5及未来.net 6等系列源码进行研究，展开系列技术的综合应用之路。通用混合开发框架（CeriumX.Framework）因此应运而生，围绕通用主机及其系列技术，利用动态扩展、托管服务、DI容器、配置、选项、日志等功能特性，组建封装而成。通用混合开发框架可以将ASP.NET Core、WPF、WinForm、模块化、组合视图、CEF框架、WebView2、Chromium综合集成为一体，相互之间亦可实现无缝通信和数据交换。
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\CeriumX.Framework.Core.Abstractions\src\CeriumX.Framework.Core.Abstractions.csproj" />
-    <ProjectReference Include="..\..\CeriumX.Framework.Core.WebExtensions\src\CeriumX.Framework.Core.WebExtensions.csproj" />
-  </ItemGroup>
+      当前类库为通用混合开发框架的核心实现，实现了抽象定义的各组成接口及公共部分，配合相应的扩展实现了混合开发框架的核心功能实现；核心实现是开发框架的重要组成，集成了通用主机的功能及其设计思想精华，能够通信扩展的方式集成任何所需要的产品和服务等中间件。
+
+      NOTE: 通用混合开发框架为长期工作实践经验积累，在长期的开发实践工作奋战中，通过业务和技术的沉淀，以及各式开发思想的融汇，从而创作而成，在此，感谢历路过往。在使用的过程中还请注重作者劳动成果，保留必要的注释或文字标识，谢谢。</Description>
+		<Company>华夏银河空间联盟</Company>
+		<Product>通用混合开发框架核心抽象</Product>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageProjectUrl>https://cockroach888.github.io</PackageProjectUrl>
+		<PackageIcon>PackageIcon.jpg</PackageIcon>
+		<PackageIconUrl />
+		<RepositoryUrl>https://github.com/CeriumX/CeriumX.Framework</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright © Cockroach soulful, All Rights Reserved.</Copyright>
+		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
+		<PackageReleaseNotes>当前类库为通用混合开发框架的核心实现，实现了抽象定义的各组成接口及公共部分，配合相应的扩展实现了混合开发框架的核心功能实现；核心实现是开发框架的重要组成，集成了通用主机的功能及其设计思想精华，能够通信扩展的方式集成任何所需要的产品和服务等中间件。</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="copy $(TargetPath) /B /Y  $(SolutionDir)\Appx4AnyCPU\$(TargetFileName) /B" />
+	</Target>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\CeriumX.Framework.Core.Abstractions\src\CeriumX.Framework.Core.Abstractions.csproj" />
+		<ProjectReference Include="..\..\CeriumX.Framework.Core.WebExtensions\src\CeriumX.Framework.Core.WebExtensions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\..\PackageIcon.jpg">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
