@@ -1,0 +1,131 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Bootstrapper", "CeriumX.Framework.Bootstrapper\src\CeriumX.Framework.Bootstrapper.csproj", "{76183A07-1121-4285-B12C-8638159562C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Abstractions", "CeriumX.Framework.Abstractions\src\CeriumX.Framework.Abstractions.csproj", "{DAA0DEA2-BB5B-4B48-9334-6C8455C70A37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AA58581C-F124-4734-B83C-F963D2A53158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Core", "Core\CeriumX.Framework.Core\src\CeriumX.Framework.Core.csproj", "{AC164211-208A-4C34-BF12-50E9360B1BD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Core.WebExtensions", "Core\CeriumX.Framework.Core.WebExtensions\src\CeriumX.Framework.Core.WebExtensions.csproj", "{BD8C47F5-4C2A-46C7-A76F-7EB872C74590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Core.WPFExtensions", "Core\CeriumX.Framework.Core.WPFExtensions\src\CeriumX.Framework.Core.WPFExtensions.csproj", "{130F91B8-41ED-4E04-A687-6F08C11F9193}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Core.WinFormExtensions", "Core\CeriumX.Framework.Core.WinFormExtensions\src\CeriumX.Framework.Core.WinFormExtensions.csproj", "{12D5A4A4-3359-4BBA-8D1D-20D4DE255B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Core.SplashScreenExtensions", "Core\CeriumX.Framework.Core.SplashScreenExtensions\src\CeriumX.Framework.Core.SplashScreenExtensions.csproj", "{F7A12387-DE14-4B45-AEA5-B385E1F6C5D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AF8F0919-3232-4D24-9AB4-A8078936908A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Services.Abstractions", "Services\CeriumX.Framework.Services.Abstractions\src\CeriumX.Framework.Services.Abstractions.csproj", "{54D86F7E-4B9D-44F1-A714-EFDDF4BE33B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Services", "Services\CeriumX.Framework.Services\src\CeriumX.Framework.Services.csproj", "{C72874E3-0855-4353-91B1-25256562A889}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modularity", "Modularity", "{F4B9C638-309D-49EB-B305-63E3D0AD5A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Modularity.Abstractions", "Modularity\CeriumX.Framework.Modularity.Abstractions\src\CeriumX.Framework.Modularity.Abstractions.csproj", "{5EB58DD4-F789-4F3D-B242-4BD78EA4CEE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.Modularity", "Modularity\CeriumX.Framework.Modularity\src\CeriumX.Framework.Modularity.csproj", "{16BD063B-3B94-425C-822F-40731FDB3BDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompositeUI", "CompositeUI", "{41039B54-96BD-4828-8D01-EF8A686F61E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.CompositeUI.Abstractions", "CompositeUI\CeriumX.Framework.CompositeUI.Abstractions\src\CeriumX.Framework.CompositeUI.Abstractions.csproj", "{5773FCD9-0693-4639-8250-7ACEC7D889D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.CompositeUI", "CompositeUI\CeriumX.Framework.CompositeUI\src\CeriumX.Framework.CompositeUI.csproj", "{0B0143B2-33BE-4918-A745-30F0455E0FFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SurfaceX", "SurfaceX", "{EAF56D4E-66C0-4FED-9BA6-67AFD41AD447}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.SurfaceX.WPFSurface", "SurfaceX\CeriumX.Framework.SurfaceX.WPFSurface\src\CeriumX.Framework.SurfaceX.WPFSurface.csproj", "{F33F7912-30D4-4B0C-9EFC-63D8A6D9ACDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Framework.SurfaceX.WinFormSurface", "SurfaceX\CeriumX.Framework.SurfaceX.WinFormSurface\src\CeriumX.Framework.SurfaceX.WinFormSurface.csproj", "{F64450E8-AF01-4C1B-82D2-6FA86FA3AA60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76183A07-1121-4285-B12C-8638159562C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76183A07-1121-4285-B12C-8638159562C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76183A07-1121-4285-B12C-8638159562C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76183A07-1121-4285-B12C-8638159562C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA0DEA2-BB5B-4B48-9334-6C8455C70A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA0DEA2-BB5B-4B48-9334-6C8455C70A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA0DEA2-BB5B-4B48-9334-6C8455C70A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA0DEA2-BB5B-4B48-9334-6C8455C70A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC164211-208A-4C34-BF12-50E9360B1BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC164211-208A-4C34-BF12-50E9360B1BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC164211-208A-4C34-BF12-50E9360B1BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC164211-208A-4C34-BF12-50E9360B1BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8C47F5-4C2A-46C7-A76F-7EB872C74590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8C47F5-4C2A-46C7-A76F-7EB872C74590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8C47F5-4C2A-46C7-A76F-7EB872C74590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8C47F5-4C2A-46C7-A76F-7EB872C74590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130F91B8-41ED-4E04-A687-6F08C11F9193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130F91B8-41ED-4E04-A687-6F08C11F9193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130F91B8-41ED-4E04-A687-6F08C11F9193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130F91B8-41ED-4E04-A687-6F08C11F9193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D5A4A4-3359-4BBA-8D1D-20D4DE255B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D5A4A4-3359-4BBA-8D1D-20D4DE255B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D5A4A4-3359-4BBA-8D1D-20D4DE255B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D5A4A4-3359-4BBA-8D1D-20D4DE255B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A12387-DE14-4B45-AEA5-B385E1F6C5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A12387-DE14-4B45-AEA5-B385E1F6C5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A12387-DE14-4B45-AEA5-B385E1F6C5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A12387-DE14-4B45-AEA5-B385E1F6C5D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D86F7E-4B9D-44F1-A714-EFDDF4BE33B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D86F7E-4B9D-44F1-A714-EFDDF4BE33B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D86F7E-4B9D-44F1-A714-EFDDF4BE33B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D86F7E-4B9D-44F1-A714-EFDDF4BE33B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72874E3-0855-4353-91B1-25256562A889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72874E3-0855-4353-91B1-25256562A889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72874E3-0855-4353-91B1-25256562A889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72874E3-0855-4353-91B1-25256562A889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB58DD4-F789-4F3D-B242-4BD78EA4CEE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB58DD4-F789-4F3D-B242-4BD78EA4CEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB58DD4-F789-4F3D-B242-4BD78EA4CEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB58DD4-F789-4F3D-B242-4BD78EA4CEE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BD063B-3B94-425C-822F-40731FDB3BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BD063B-3B94-425C-822F-40731FDB3BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BD063B-3B94-425C-822F-40731FDB3BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BD063B-3B94-425C-822F-40731FDB3BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5773FCD9-0693-4639-8250-7ACEC7D889D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5773FCD9-0693-4639-8250-7ACEC7D889D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5773FCD9-0693-4639-8250-7ACEC7D889D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5773FCD9-0693-4639-8250-7ACEC7D889D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0143B2-33BE-4918-A745-30F0455E0FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0143B2-33BE-4918-A745-30F0455E0FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0143B2-33BE-4918-A745-30F0455E0FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0143B2-33BE-4918-A745-30F0455E0FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F33F7912-30D4-4B0C-9EFC-63D8A6D9ACDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F33F7912-30D4-4B0C-9EFC-63D8A6D9ACDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F33F7912-30D4-4B0C-9EFC-63D8A6D9ACDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F33F7912-30D4-4B0C-9EFC-63D8A6D9ACDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F64450E8-AF01-4C1B-82D2-6FA86FA3AA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64450E8-AF01-4C1B-82D2-6FA86FA3AA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64450E8-AF01-4C1B-82D2-6FA86FA3AA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64450E8-AF01-4C1B-82D2-6FA86FA3AA60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC164211-208A-4C34-BF12-50E9360B1BD2} = {AA58581C-F124-4734-B83C-F963D2A53158}
+		{BD8C47F5-4C2A-46C7-A76F-7EB872C74590} = {AA58581C-F124-4734-B83C-F963D2A53158}
+		{130F91B8-41ED-4E04-A687-6F08C11F9193} = {AA58581C-F124-4734-B83C-F963D2A53158}
+		{12D5A4A4-3359-4BBA-8D1D-20D4DE255B3F} = {AA58581C-F124-4734-B83C-F963D2A53158}
+		{F7A12387-DE14-4B45-AEA5-B385E1F6C5D8} = {AA58581C-F124-4734-B83C-F963D2A53158}
+		{54D86F7E-4B9D-44F1-A714-EFDDF4BE33B6} = {AF8F0919-3232-4D24-9AB4-A8078936908A}
+		{C72874E3-0855-4353-91B1-25256562A889} = {AF8F0919-3232-4D24-9AB4-A8078936908A}
+		{5EB58DD4-F789-4F3D-B242-4BD78EA4CEE7} = {F4B9C638-309D-49EB-B305-63E3D0AD5A6C}
+		{16BD063B-3B94-425C-822F-40731FDB3BDA} = {F4B9C638-309D-49EB-B305-63E3D0AD5A6C}
+		{5773FCD9-0693-4639-8250-7ACEC7D889D7} = {41039B54-96BD-4828-8D01-EF8A686F61E5}
+		{0B0143B2-33BE-4918-A745-30F0455E0FFA} = {41039B54-96BD-4828-8D01-EF8A686F61E5}
+		{F33F7912-30D4-4B0C-9EFC-63D8A6D9ACDF} = {EAF56D4E-66C0-4FED-9BA6-67AFD41AD447}
+		{F64450E8-AF01-4C1B-82D2-6FA86FA3AA60} = {EAF56D4E-66C0-4FED-9BA6-67AFD41AD447}
+	EndGlobalSection
+EndGlobal
