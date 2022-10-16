@@ -1,8 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<OutputType>Library</OutputType>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0;</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<OutputType>Exe</OutputType>		
+		<TargetFrameworks>net461;net462;net47;net471;net472;net48;netcoreapp3.1;net5.0-windows;net6.0-windows;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>sys.ico</ApplicationIcon>
@@ -10,11 +12,19 @@
 		<AssemblyOriginatorKeyFile>CeriumX.Framework.Bootstrapper.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<!--<RootNamespace>CeriumX.Framework.Bootstrapper</RootNamespace>
-		<AssemblyName>CeriumX.Framework.Bootstrapper</AssemblyName>-->
+		<!--<RootNamespace>CeriumX.Framework.Bootstrapper</RootNamespace>-->
+		<!--<AssemblyName>CeriumX.Framework.Bootstrapper</AssemblyName>-->
 		<AssemblyVersion>1.0.0</AssemblyVersion>
 		<FileVersion>1.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<StartupObject />
+		<ApplicationManifest>application.manifest</ApplicationManifest>
+		<!--<DisableWinExeOutputInference>true</DisableWinExeOutputInference>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>-->
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -63,6 +73,28 @@
 		<DebugType>none</DebugType>
 		<DebugSymbols>false</DebugSymbols>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="appsettings.Development.json" />
+		<None Remove="appsettings.json" />
+		<None Remove="appsettings.Production.json" />
+		<None Remove="NLog.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="appsettings.Development.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="appsettings.Production.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="NLog.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\..\..\LICENSE.txt">

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1"
+		  xmlns:asmv2="urn:schemas-microsoft-com:asm.v2"
+          xmlns:asmv3="urn:schemas-microsoft-com:asm.v3"
+		  manifestVersion="1.0">
+	<assemblyIdentity version="1.0.0.0" name="CeriumXHost.CeriumXApp"/>
+
+	<!--
+		指示该应用程序可以感知 DPI 且 Windows 在 DPI 较高时将不会对其进行自动缩放。
+		Windows Presentation Foundation (WPF)应用程序自动感知 DPI，无需选择加入。
+		选择加入此设置的 Windows 窗体应用程序(目标设定为 .NET Framework 4.6 )还应
+		在其 app.config 中将 "EnableWindowsFormsHighDpiAutoResizing" 设置设置为 "true"。
+		
+		确保windows Vista及以上版本将Greenshot视为 "DPI Aware"。
+		详见：http://msdn.microsoft.com/en-us/library/ms633543.aspx
+	-->
+	<!--<asmv3:application>
+		<asmv3:windowsSettings>
+			<dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">True/PM</dpiAware>
+			<disableWindowFiltering xmlns="https://schemas.microsoft.com/SMI/2011/WindowsSettings">true</disableWindowFiltering>
+			<printerDriverIsolation xmlns="https://schemas.microsoft.com/SMI/2011/WindowsSettings">true</printerDriverIsolation>
+			<dpiAwareness xmlns="https://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2,PerMonitor</dpiAwareness>
+			<gdiScaling xmlns="https://schemas.microsoft.com/SMI/2017/WindowsSettings">true</gdiScaling>
+		</asmv3:windowsSettings>
+	</asmv3:application>-->
+
+
+	<!--
+		设置与应用程序一起工作且已针对此应用程序进行测试的 Windows 版本的列表。
+		注释当前 Windows 版本配置节，Windows 将自动选择最兼容的环境。
+	-->
+	<compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+		<application>
+			<!-- Windows 10 -->
+			<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+			<!-- Windows 8.1 -->
+			<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />
+			<!--Windows 8 -->
+			<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />
+			<!-- Windows 7 -->
+			<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />
+			<!-- Windows Vista -->
+			<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />
+		</application>
+	</compatibility>
+
+
+	<!-- 将UAC级别设置为 "asInvoker "并禁用注册表虚拟化 -->
+	<!--
+		requestedExecutionLevel "节点的存在将在Vista上禁用文件和注册表的虚拟化。
+		详见：http://msdn.microsoft.com/en-us/library/aa965884%28v=vs.85%29.aspx
+          
+		使用 "level "属性来指定用户账户控制级别:
+		asInvoker            = 从不提示提升
+		requireAdministrator = 始终提示提升，使用管理员运行当前程序。
+		highestAvailable     = 当由管理员启动时提示提升；但如果由普通用户启动，则不提示管理员密码。
+					
+		uiAccess="false"
+		true
+		UIA 程序可以自动禁用提升提示的安全桌面，除非你还禁用了提升提示，否则提示会显示在交互式用户的桌面上，而不是安全桌面上。
+		在远程协助会话期间，远程管理员的桌面视图中也会Windows提示，并且远程管理员可以提供适当的凭据进行提升。
+					
+		false
+		只有交互式桌面的用户或禁用用户帐户控制 ： 提示提升策略设置时切换到安全桌面，才能禁用安全桌面。
+	-->
+	<!--<asmv2:trustInfo>
+		<asmv2:security>
+			<asmv3:requestedPrivileges>				
+				<asmv3:requestedExecutionLevel level="asInvoker" uiAccess="false" />
+			</asmv3:requestedPrivileges>
+		</asmv2:security>
+	</asmv2:trustInfo>-->
+
+
+	<!-- 启用 Windows 公共控件和对话框的主题(Windows XP 和更高版本) -->
+	<!--<dependency>
+		<dependentAssembly>
+			<assemblyIdentity
+				type="win32"
+				name="Microsoft.Windows.Common-Controls"
+				version="6.0.0.0"
+				processorArchitecture="*"
+				publicKeyToken="6595b64144ccf1df"
+				language="*"
+			/>
+		</dependentAssembly>
+	</dependency>-->
+</assembly>
