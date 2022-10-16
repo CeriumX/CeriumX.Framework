@@ -21,7 +21,7 @@ dotnet new sln -n CRS2TBBT4CeriumX.Framework
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 示例程序 & samples 0 ----------
+@echo\&echo  ---------- 示例程序 @ samples 0 ----------
 
 
 
@@ -30,7 +30,7 @@ dotnet new sln -n CRS2TBBT4CeriumX.Framework
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 引导程序 & Bootstrapper 1 ----------
+@echo\&echo  ---------- 引导程序 @ Bootstrapper 1 ----------
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Bootstrapper -o CeriumX.Framework.Bootstrapper/src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add --in-root CeriumX.Framework.Bootstrapper/src
