@@ -1,9 +1,82 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0;</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<ApplicationIcon>Library.ico</ApplicationIcon>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>CeriumX.Framework.Abstractions.snk</AssemblyOriginatorKeyFile>
+		<DelaySign>false</DelaySign>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<!--<RootNamespace>CeriumX.Framework.Abstractions</RootNamespace>
+		<AssemblyName>CeriumX.Framework.Abstractions</AssemblyName>-->
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>蟑螂·魂</Authors>
+		<Description>当前封装库为混合应用开发框架的抽象层，主要定义了支撑框架主体的、统一的、规范化的功能接口，以及对外提供的公共功能和公共扩展支持等。
+
+1. 当前各行各业发展迅猛，技术革新层出不穷，面对日新月异的业务迭代与发展，可谓诸子百家齐争鸣，累死累活技术人；
+2. 当下无论何种编程语言，又或正在成为气候的新星语言，皆是一种变革，亦是技术的进步和突破，但万变不离：思想也！
+3. 目前，WEB技术的表现和呈现能力，越来越让人感到惊艳；但，传统不会死，新潮亦流行，适合地、符合的，才是大道！
+4. 近期，经过对Blazor技术的适度应用，发现其是基于WebView2作为WEB承载，结合ASP.NET Core技术，并配合桌面开发，形成了混合应用技术；
+5. 而鄙人经过多年工作经验的积累和迭代，运用过基于CEF框架和WinForm桌面技术的混合应用实践，并落地应用于诸多业务生产；
+6. 经过对微软.NET 6+技术栈的系列源码进行深入研究，以及第三方各种优秀源码的研习，特别是历往工作实践中的积累，萌生了研发一款开源框架的想法；
+7. 因而，全新一代的混合应用开发框架，应运而生，其主要围绕通用主机及其系列技术，利用动态扩展、托管服务、DI容器、配置、选项、日志等功能和特性，组建封装而成；
+8. 本混合应用开发框架，可以将ASP.NET Core、WPF、WinForm、模块化、组合视图、CEF框架、WebView2、Chromium、消息队列等综合集成为一体，相互之间亦可实现无缝通信和数据交换；
+9. 利用WEB技术的丰富呈现能力，结合桌面应用的强大支撑，将各种前端技术和后端技术集成修真、吉结良缘，可谓相得益彰、事半功倍。
+
+> #### 编程是一门艺术！编程需要灵性，思想决定高度；良好的编码习惯、严谨的思维逻辑、独到的业务见解、持之以恒的执着等等，皆是程序猿不可或缺的本质。
+
+- 鄙人专注.Net技术，深入研习.NET 6+系列源码。本库通过长期实践工作积累落地成库，库中提供的所有功能均广泛应用于业务生产环境，同时会不间断地进行功能的优化和完善；
+- 本库均由鄙人采用最新技术实践编码完成，个中艰辛不作过多表述，仅希望世界和平，养家糊口力所能及；
+- 本库可同时满足大、中、小等各式项目的自由支配使用，以提供快捷、便利的工具方法，提升工作效率和业务能力为宗旨。</Description>
+		<Company>华夏银河空间联盟</Company>
+		<Product>混合应用开发框架</Product>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageProjectUrl>https://cockroach888.github.io</PackageProjectUrl>
+		<PackageIcon>PackageIcon.jpg</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/CeriumX/CeriumX.Framework</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
+		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
+		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<Version>$(AssemblyVersion)</Version>
+		<!--<PackageId>CeriumX.Framework.Abstractions</PackageId>-->
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\..\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\PackageIcon.jpg">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
