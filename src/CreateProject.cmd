@@ -32,7 +32,7 @@ dotnet new sln -n CRS2TBBT4CeriumX.Framework
 @echo.
 @echo\&echo  ---------- 引导程序 & Bootstrapper 1 ----------
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Bootstrapper -o CeriumX.Framework.Bootstrapper/src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Bootstrapper -o CeriumX.Framework.Bootstrapper/src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add --in-root CeriumX.Framework.Bootstrapper/src
 
 
@@ -42,7 +42,7 @@ dotnet sln CRS2TBBT4CeriumX.Framework.sln add --in-root CeriumX.Framework.Bootst
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 接口抽象 ﹫ Abstractions 1 ----------
+@echo\&echo  ---------- 框架抽象层 ﹫ Abstractions 1 ----------
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Abstractions -o CeriumX.Framework.Abstractions/src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add --in-root CeriumX.Framework.Abstractions/src
@@ -52,21 +52,21 @@ dotnet sln CRS2TBBT4CeriumX.Framework.sln add --in-root CeriumX.Framework.Abstra
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 框架核心 ﹫ Core 5 ----------
+@echo\&echo  ---------- 框架核心层 ﹫ Core 5 ----------
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Core -o Core\CeriumX.Framework.Core\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Core -o Core\CeriumX.Framework.Core\src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Core Core\CeriumX.Framework.Core\src
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Core.WebExtensions -o Core\CeriumX.Framework.Core.WebExtensions\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Core.WebExtensions -o Core\CeriumX.Framework.Core.WebExtensions\src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Core Core\CeriumX.Framework.Core.WebExtensions\src
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Core.WPFExtensions -o Core\CeriumX.Framework.Core.WPFExtensions\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Core.WPFExtensions -o Core\CeriumX.Framework.Core.WPFExtensions\src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Core Core\CeriumX.Framework.Core.WPFExtensions\src
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Core.WinFormExtensions -o Core\CeriumX.Framework.Core.WinFormExtensions\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Core.WinFormExtensions -o Core\CeriumX.Framework.Core.WinFormExtensions\src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Core Core\CeriumX.Framework.Core.WinFormExtensions\src
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Core.SplashScreenExtensions -o Core\CeriumX.Framework.Core.SplashScreenExtensions\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Core.SplashScreenExtensions -o Core\CeriumX.Framework.Core.SplashScreenExtensions\src
 dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Core Core\CeriumX.Framework.Core.SplashScreenExtensions\src
 
 
@@ -74,104 +74,56 @@ dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Core Core\CeriumX.Framework.Cor
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 框架服务 ﹫ Services 2 ----------
+@echo\&echo  ---------- 框架服务层 ﹫ Services 2 ----------
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Services.Abstractions -o Services\CeriumX.Framework.Services.Abstractions\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s Services Services\CeriumX.Framework.Services.Abstractions\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Services.Abstractions -o Services\CeriumX.Framework.Services.Abstractions\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Services Services\CeriumX.Framework.Services.Abstractions\src
 
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Services -o Services\CeriumX.Framework.Services\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s Services Services\CeriumX.Framework.Services\src
-
-
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Services -o Services\CeriumX.Framework.Services\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Services Services\CeriumX.Framework.Services\src
 
 
 
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 模块化 ﹫ Modularity 2 ----------
+@echo\&echo  ---------- 框架模块化 ﹫ Modularity 2 ----------
 
 @echo\&echo  创建项目 CeriumX.Framework.Modularity.Abstractions 并添加到解决方案。
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Modularity.Abstractions -o Modularity\CeriumX.Framework.Modularity.Abstractions\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s Modularity Modularity\CeriumX.Framework.Modularity.Abstractions\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Modularity.Abstractions -o Modularity\CeriumX.Framework.Modularity.Abstractions\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Modularity Modularity\CeriumX.Framework.Modularity.Abstractions\src
 
 @echo\&echo  创建项目 CeriumX.Framework.Modularity 并添加到解决方案。
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.Modularity -o Modularity\CeriumX.Framework.Modularity\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s Modularity Modularity\CeriumX.Framework.Modularity\src
-
-
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.Modularity -o Modularity\CeriumX.Framework.Modularity\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s Modularity Modularity\CeriumX.Framework.Modularity\src
 
 
 
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 组合视图 ﹫ CompositeUI 2 ----------
+@echo\&echo  ---------- 框架组合视图 ﹫ CompositeUI 2 ----------
 
 @echo\&echo  创建项目 CeriumX.Framework.CompositeUI.Abstractions 并添加到解决方案。
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.CompositeUI.Abstractions -o CompositeUI\CeriumX.Framework.CompositeUI.Abstractions\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s CompositeUI CompositeUI\CeriumX.Framework.CompositeUI.Abstractions\src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.CompositeUI.Abstractions -o CompositeUI\CeriumX.Framework.CompositeUI.Abstractions\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s CompositeUI CompositeUI\CeriumX.Framework.CompositeUI.Abstractions\src
 
 @echo\&echo  创建项目 CeriumX.Framework.CompositeUI 并添加到解决方案。
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.CompositeUI -o CompositeUI\CeriumX.Framework.CompositeUI\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s CompositeUI CompositeUI\CeriumX.Framework.CompositeUI\src
-
-
-
-
-
-@echo.
-@echo.
-@echo.
-@echo\&echo  ---------- 桌面窗体 ﹫ SurfaceX 2 ----------
-
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.SurfaceX.WPFSurface -o SurfaceX\CeriumX.Framework.SurfaceX.WPFSurface\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s SurfaceX SurfaceX\CeriumX.Framework.SurfaceX.WPFSurface\src
-
-dotnet new classlib -lang C# -f net6.0 -n CeriumX.Framework.SurfaceX.WinFormSurface -o SurfaceX\CeriumX.Framework.SurfaceX.WinFormSurface\src
-dotnet sln CRS2TBBT4CeriumX.Framework.sln.sln add -s SurfaceX SurfaceX\CeriumX.Framework.SurfaceX.WinFormSurface\src
-
-
-
-
-
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.CompositeUI -o CompositeUI\CeriumX.Framework.CompositeUI\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s CompositeUI CompositeUI\CeriumX.Framework.CompositeUI\src
 
 
 
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 项目类别 ﹫ ProjectCategory 10 ----------
+@echo\&echo  ---------- 框架桌面窗体 ﹫ SurfaceX 2 ----------
 
-dotnet new web -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.SurfaceX.WPFSurface -o SurfaceX\CeriumX.Framework.SurfaceX.WPFSurface\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s SurfaceX SurfaceX\CeriumX.Framework.SurfaceX.WPFSurface\src
 
-dotnet new blazorserver -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
-
-dotnet new blazorwasm -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
-
-dotnet new mvc -lang C# -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
-
-dotnet new webapi -lang "C#" -f net6.0 --exclude-launch-settings --no-https -n LibrayName -o LibrayName/src
-dotnet sln SolutionName.sln add --in-root LibrayName/src
-
-dotnet new winforms -lang "C#" -f net6.0 -n LibrayName -o samples/LibrayName/src
-dotnet sln SolutionName.sln add -s samples samples/LibrayName/src
-
-dotnet new wpf -lang "C#" -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
-
-dotnet new console -lang C# -f net6.0 -n LibrayName -o samples/LibrayName/src
-dotnet sln SolutionName.sln add -s samples samples/LibrayName/src
-
-dotnet new classlib -lang "C#" -f net6.0 -n LibrayName -o LibrayName/src
-dotnet sln SolutionName.sln add --in-root LibrayName/src
-
-dotnet new classlib -lang "C#" -f net6.0 -n LibrayName -o ProjectCategory/LibrayName/src
-dotnet sln SolutionName.sln add -s ProjectCategory ProjectCategory/LibrayName/src
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Framework.SurfaceX.WinFormSurface -o SurfaceX\CeriumX.Framework.SurfaceX.WinFormSurface\src
+dotnet sln CRS2TBBT4CeriumX.Framework.sln add -s SurfaceX SurfaceX\CeriumX.Framework.SurfaceX.WinFormSurface\src
 
 
 
