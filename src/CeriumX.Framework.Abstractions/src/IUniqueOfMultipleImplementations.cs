@@ -26,7 +26,7 @@ namespace CeriumX.Framework.Abstractions;
 public interface IUniqueOfMultipleImplementations
 {
     /// <summary>
-    /// 编号
+    /// 唯一编号
     /// </summary>
     string UniqueId { get; }
 }

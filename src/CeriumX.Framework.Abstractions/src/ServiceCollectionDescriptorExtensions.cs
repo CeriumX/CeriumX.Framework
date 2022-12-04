@@ -21,16 +21,17 @@
 namespace CeriumX.Framework.Abstractions;
 
 /// <summary>
-/// 服务集合描述器扩展
+/// 容器服务集合扩展类
 /// </summary>
 public static class ServiceCollectionDescriptorExtensions
 {
     /// <summary>
-    /// 尝试再尝试添加一个单例服务到服务容器
+    /// 尝试添加指定泛型服务与实现的实例到服务容器
     /// </summary>
+    /// <remarks>当泛型服务已存在相应实现的实例时，将放弃继续添加。</remarks>
     /// <typeparam name="TService">服务泛型</typeparam>
-    /// <typeparam name="TImplementation">实现泛型</typeparam>
-    /// <param name="collection"><see cref="IServiceCollection"/></param>
+    /// <typeparam name="TImplementation">服务实现泛型</typeparam>
+    /// <param name="collection">容器服务集合 <see cref="IServiceCollection"/></param>
     /// <exception cref="ArgumentNullException">当一个空的引用被传递到一个不接受它作为有效参数的方法时，会抛出一个异常。</exception>
     public static void TryTryAddSingleton<TService, TImplementation>(this IServiceCollection collection)
         where TService : class
@@ -45,11 +46,12 @@ public static class ServiceCollectionDescriptorExtensions
     }
 
     /// <summary>
-    /// 尝试再尝试添加一个单例服务到服务容器
+    /// 尝试添加指定泛型服务与实现的实例到服务容器
     /// </summary>
-    /// <param name="collection"><see cref="IServiceCollection"/></param>
-    /// <param name="service">服务</param>
-    /// <param name="implementationType">实现</param>
+    /// <remarks>当泛型服务已存在相应实现的实例时，将放弃继续添加。</remarks>
+    /// <param name="collection">容器服务集合 <see cref="IServiceCollection"/></param>
+    /// <param name="service">服务的类型对象</param>
+    /// <param name="implementationType">服务实现的类型对象</param>
     /// <exception cref="ArgumentNullException">当一个空的引用被传递到一个不接受它作为有效参数的方法时，会抛出一个异常。</exception>
     public static void TryTryAddSingleton(this IServiceCollection collection, Type service, Type implementationType)
     {

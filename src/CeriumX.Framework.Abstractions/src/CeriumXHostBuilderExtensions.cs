@@ -28,20 +28,17 @@ public static class CeriumXHostBuilderExtensions
     /// <summary>
     /// 使用 ICeriumX Host 单例
     /// </summary>
-    /// <param name="hostBuilder"><see cref="ICeriumXHostBuilder"/></param>
+    /// <param name="hostBuilder">The <see cref="ICeriumXHostBuilder"/> to configure.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public static ICeriumXHostBuilder UseCeriumXHostSingleInstance(this ICeriumXHostBuilder hostBuilder)
     {
-        return hostBuilder.ConfigureCeriumXHostInstance(appHost =>
-        {
-            CeriumXHostInstance.SetInstance(appHost);
-        });
+        return hostBuilder.ConfigureCeriumXHostInstance(CeriumXHostInstance.SetInstance);
     }
 
     /// <summary>
     /// 应用程序配置
     /// </summary>
-    /// <param name="hostBuilder"><see cref="ICeriumXHostBuilder"/></param>
+    /// <param name="hostBuilder">The <see cref="ICeriumXHostBuilder"/> to configure.</param>
     /// <param name="configureDelegate">配置委托</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public static ICeriumXHostBuilder ConfigureAppConfiguration(this ICeriumXHostBuilder hostBuilder, Action<IConfigurationBuilder> configureDelegate)
@@ -50,9 +47,9 @@ public static class CeriumXHostBuilderExtensions
     }
 
     /// <summary>
-    /// 容器服务
+    /// 容器服务配置
     /// </summary>
-    /// <param name="hostBuilder"><see cref="ICeriumXHostBuilder"/></param>
+    /// <param name="hostBuilder">The <see cref="ICeriumXHostBuilder"/> to configure.</param>
     /// <param name="configureDelegate">配置委托</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public static ICeriumXHostBuilder ConfigureServices(this ICeriumXHostBuilder hostBuilder, Action<IServiceCollection> configureDelegate)

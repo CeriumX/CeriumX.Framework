@@ -21,26 +21,26 @@
 namespace CeriumX.Framework.Abstractions;
 
 /// <summary>
-/// 容器服务提供者扩展
+/// 容器服务提供者扩展类
 /// </summary>
 public static class ServiceProviderServiceExtensions
 {
     /// <summary>
-    /// 获取指定服务实现的实例
+    /// 获取指定服务的实例
     /// </summary>
     /// <typeparam name="TService">服务泛型</typeparam>
-    /// <param name="provider"><see cref="IServiceProvider"/></param>
-    /// <returns>获取的服务实例</returns>
+    /// <param name="provider">服务提供者 <see cref="IServiceProvider"/></param>
+    /// <returns>服务实例</returns>
     public static TService? GetInstance<TService>(this IServiceProvider provider) where TService : class
         => provider.GetService<TService>();
 
     /// <summary>
-    /// 获取具有指定编号的服务实现的实例
+    /// 获取具有指定编号服务的实例
     /// </summary>
     /// <typeparam name="TService">服务泛型</typeparam>
-    /// <param name="provider"><see cref="IServiceProvider"/></param>
-    /// <param name="uniqueId">编号</param>
-    /// <returns>获取的服务实例</returns>
+    /// <param name="provider">服务提供者 <see cref="IServiceProvider"/></param>
+    /// <param name="uniqueId">唯一编号</param>
+    /// <returns>服务实例</returns>
     public static TService? GetInstance<TService>(this IServiceProvider provider, string uniqueId)
         where TService : class
     {
@@ -63,12 +63,12 @@ public static class ServiceProviderServiceExtensions
     }
 
     /// <summary>
-    /// 获取指定服务实现的实例
+    /// 获取指定泛型服务与实现的实例
     /// </summary>
     /// <typeparam name="TService">服务泛型</typeparam>
-    /// <typeparam name="TImplementation">实现泛型</typeparam>
-    /// <param name="provider"><see cref="IServiceProvider"/></param>
-    /// <returns>获取的服务实例</returns>
+    /// <typeparam name="TImplementation">服务实现泛型</typeparam>
+    /// <param name="provider">服务提供者 <see cref="IServiceProvider"/></param>
+    /// <returns>服务实例</returns>
     public static TService? GetInstance<TService, TImplementation>(this IServiceProvider provider)
         where TService : class
         where TImplementation : class, TService
