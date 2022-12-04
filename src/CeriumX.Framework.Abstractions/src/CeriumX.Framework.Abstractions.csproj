@@ -49,7 +49,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>调整相关类中的注释内容。</PackageReleaseNotes>
+		<PackageReleaseNotes>增加内部可访问性的友元程序集适配。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Framework.Abstractions</PackageId>-->
 	</PropertyGroup>
@@ -77,6 +77,10 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="CeriumX.Framework.Core, PublicKey=0024000004800000140200000602000000240000525341310010000001000100bd1fe1280d09b5a876b129599d4eb9be89598c945b4761e03e27ef97c9c6c781c51a811d1ca0a3fbb06c958e3e99768c2ba13f23a338bd95258fe2f75e382fa37d73c7fc4136c91d652cf8edeac422bf740ead22986da115f237ddc30a3ff24c127117920fd556d607de9a4352ec4dd15dab71ac62133577f6be9521b5d343b6c7213c12b34952af0b421598b1cc8603089074ca734355df024bed598c79bf69d98881bb1d67eb9d1eaba039f6351436aa06f6da39c609a99454c6ac8a86951df01ba41522910105fd5165edcc60ecef7813d1d79de92b5e84e11947958263e05fc360370b6a6a303462c138243693ef16a7bed50defe9ec84e49dc9b16dbf32de192c0d4fce19c5f1763b07594b33782ddef15c63e6f5278d9e20ca047ebeaec13f746883d91bc9f24361d2ac8f52a55e04de835ade50dafcf21d1ab6531050dbf6bd4aeef81c8690414e49dd466509afd62cc99ef7b78c487d03e0785a7dbe729fb44f8ca0db162abb4aab2574ff533e60a031ccf7006356212e2a26ee84723ad249287d03eacbb687cbc66432c58a9bfccfd7b69ac5a8c7d3e25e3376b02ce9482b587b23f55d0b083188ca1abff0210563b16b3c73e4b8c574e5070dd14eeee5c94e686a7957e027de3340b0166fe7dcbaf2b807cad49c39b944752276618c3a9be293c8ab8b4dff2f852d25c967e8ea84e10a7f3eb8243bae76cdc410ae" />
 	</ItemGroup>
 
 	<ItemGroup>
