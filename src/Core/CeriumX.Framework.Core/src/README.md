@@ -38,4 +38,5 @@
 
 ### 2022-12-05
 - 完成 CeriumXHostBuilder.cs 功能类及其功能的编码实现工作；
-- 完成 CeriumXHost.cs 功能类及其功能的编码实现工作。
+- 完成 CeriumXHost.cs 功能类及其功能的编码实现工作；
+- 调整统一术语中的相关内容表述。
