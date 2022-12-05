@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<UseWindowsForms>true</UseWindowsForms>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net5.0-windows;net6.0-windows;</TargetFrameworks>
+		<TargetFrameworks>net6.0-windows;net7.0-windows;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>Library.ico</ApplicationIcon>
@@ -13,8 +13,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Framework.SurfaceX.WinFormSurface</RootNamespace>
 		<AssemblyName>CeriumX.Framework.SurfaceX.WinFormSurface</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>7.0.0</AssemblyVersion>
+		<FileVersion>7.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -50,7 +50,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为混合应用开发框架的桌面窗体(WinForm)，提供了基于框架核心WinForm扩展的主窗体、闪屏等默认实现。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Framework.SurfaceX.WinFormSurface</PackageId>-->
 	</PropertyGroup>

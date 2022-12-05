@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net5.0;net6.0;</TargetFrameworks>
+		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>Library.ico</ApplicationIcon>
@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Framework.Abstractions</RootNamespace>
 		<AssemblyName>CeriumX.Framework.Abstractions</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>7.0.0</AssemblyVersion>
+		<FileVersion>7.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -49,7 +49,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>增加内部可访问性的友元程序集适配。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为混合应用开发框架的抽象层，主要定义了支撑框架主体的、统一的、规范化的功能接口，以及对外提供的公共功能和公共扩展支持等。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Framework.Abstractions</PackageId>-->
 	</PropertyGroup>

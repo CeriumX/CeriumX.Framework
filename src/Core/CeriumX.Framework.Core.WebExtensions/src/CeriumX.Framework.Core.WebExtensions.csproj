@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net5.0;net6.0;</TargetFrameworks>
+		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>Library.ico</ApplicationIcon>
@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Framework.Core.WebExtensions</RootNamespace>
 		<AssemblyName>CeriumX.Framework.Core.WebExtensions</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>7.0.0</AssemblyVersion>
+		<FileVersion>7.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -49,7 +49,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为混合应用开发框架的核心(WEB)扩展层，是开发框架的重要组成，集成了ASP.NET Core框架，及其所具备的所有功能等；当然，如果你想，更可以把ABP框架或其它任何第三方框架进行集成。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Framework.Core.WebExtensions</PackageId>-->
 	</PropertyGroup>

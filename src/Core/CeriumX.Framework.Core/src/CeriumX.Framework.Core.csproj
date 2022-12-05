@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net5.0;net6.0;</TargetFrameworks>
+		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>Library.ico</ApplicationIcon>
@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Framework.Core</RootNamespace>
 		<AssemblyName>CeriumX.Framework.Core</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>7.0.0</AssemblyVersion>
+		<FileVersion>7.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -49,7 +49,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>完成本库所有基础功能的编码实现工作。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为混合应用开发框架的核心实现层，是开发框架的重要组成，实现了抽象层定义的框架主体功能接口等；同时将各核心扩展实现进行集成，形成最终的混合应用开发框架。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Framework.Core</PackageId>-->
 	</PropertyGroup>

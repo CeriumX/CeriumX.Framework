@@ -1,8 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net5.0-windows;net6.0-windows;</TargetFrameworks>
+		<TargetFrameworks>net6.0-windows;net7.0-windows;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>sys.ico</ApplicationIcon>
@@ -12,8 +14,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Framework.Bootstrapper</RootNamespace>-->
 		<!--<AssemblyName>CeriumX.Framework.Bootstrapper</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>7.0.0</AssemblyVersion>
+		<FileVersion>7.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -57,7 +59,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为混合应用开发框架的引导程序，主要用于功能实现的集成应用与测试等。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Framework.Bootstrapper</PackageId>-->
 	</PropertyGroup>

@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net5.0;net6.0;</TargetFrameworks>
+		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<ApplicationIcon>Library.ico</ApplicationIcon>
@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Framework.CompositeUI.Abstractions</RootNamespace>
 		<AssemblyName>CeriumX.Framework.CompositeUI.Abstractions</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>7.0.0</AssemblyVersion>
+		<FileVersion>7.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -49,7 +49,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为混合应用开发框架的组合视图(UI)抽象层，定义了组合UI的功能接口、公共功能和必要扩展等。组合UI的作用，是将界面划分为多个区域，然后对外提供区域的UI注入能力。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Framework.CompositeUI.Abstractions</PackageId>-->
 	</PropertyGroup>
