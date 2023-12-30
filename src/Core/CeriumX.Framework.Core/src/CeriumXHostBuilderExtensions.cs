@@ -36,10 +36,11 @@ public static class CeriumXHostBuilderExtensions
     {
         return hostBuilder.ConfigureHostConfiguration(configBuilder =>
         {
+            //ThrowHelper.ThrowIfNull(contentRoot);
+
             configBuilder.AddInMemoryCollection(new[]
             {
-                    new KeyValuePair<string, string>(HostDefaults.ContentRootKey,
-                        contentRoot  ?? throw new ArgumentNullException(nameof(contentRoot)))
+                    new KeyValuePair<string, string?>(HostDefaults.ContentRootKey, contentRoot)
                 });
         });
     }
