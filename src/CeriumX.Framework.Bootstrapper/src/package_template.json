@@ -1,0 +1,16 @@
+﻿{
+    "IsEnable": true,
+    "ModuleName": "ModuleInfoTemplate",
+    "DisplayName": "模块自描述模板",
+    "Author": "蟑螂·魂",
+    "Publisher": "蟑螂·魂",
+    "Description": "用于模块自描述信息的模板",
+    "ModuleVersion": "1.0.0.0",
+    "FrameworkVersion": "8.0.0.0",
+    "AssemblyFullName": "local://ModuleInfoTemplate.dll",
+    //"AssemblyFullName": "local://D:\\SampleModule\LightX.Module.Sample.dll",
+    //"AssemblyFullName": "local://\\192.168.1.99\SampleModule\LightX.Module.Sample.dll",
+    //"AssemblyFullName": "http(s)://www.bjgxdd.cn/SampleModule/LightX.Module.Sample.dll",
+    "Dependencies": [ "DependA", "DependB", "DependC" ],
+    "LoadingPhase": "None"
+}

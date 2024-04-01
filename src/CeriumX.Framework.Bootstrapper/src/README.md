@@ -26,6 +26,11 @@
 
 ## 开发日志
 
+### 2024-04-01
+- 优化appsettings.json配置文件；
+- 优化NLog.config配置文件；
+- 增加package_template.json模块自描述模板文件。
+
 ### 2023-11-18
 - 升级项目到.NET 8.0版本。
 
