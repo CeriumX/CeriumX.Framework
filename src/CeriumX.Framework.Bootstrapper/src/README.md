@@ -26,6 +26,9 @@
 
 ## 开发日志
 
+### 2024-04-02
+- 优化项目属性配置，增加HostenvConfigure配置信息。
+
 ### 2024-04-01
 - 优化appsettings.json配置文件；
 - 优化NLog.config配置文件；
