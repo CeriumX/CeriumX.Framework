@@ -26,14 +26,14 @@ namespace CeriumX.Framework.Abstractions;
 public interface ICeriumXHost : ICeriumXHostContext, IDisposable
 {
     /// <summary>
-    /// 启动
+    /// 优雅地启动主机
     /// </summary>
     /// <param name="cancellationToken">取消令牌</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
     Task StartAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// 停止
+    /// 优雅地停止主机
     /// </summary>
     /// <param name="cancellationToken">取消令牌</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>

@@ -10,8 +10,8 @@
 		<AssemblyOriginatorKeyFile>CeriumX.Framework.Abstractions.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<!--<RootNamespace>CeriumX.Framework.Abstractions</RootNamespace>
-		<AssemblyName>CeriumX.Framework.Abstractions</AssemblyName>-->
+		<RootNamespace>CeriumX.Framework.Abstractions</RootNamespace>
+		<!--<AssemblyName>CeriumX.Framework.Abstractions</AssemblyName>-->
 		<AssemblyVersion>8.0.0</AssemblyVersion>
 		<FileVersion>8.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
@@ -51,7 +51,7 @@
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
 		<PackageReleaseNotes>升级项目到.NET 8.0版本。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
-		<!--<PackageId>CeriumX.Framework.Abstractions</PackageId>-->
+		<PackageId>CeriumX.Framework.Abstractions</PackageId>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
