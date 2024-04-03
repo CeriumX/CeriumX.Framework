@@ -21,18 +21,78 @@
 namespace CeriumX.Framework.Abstractions;
 
 /// <summary>
-/// 容器服务提供者扩展类
+/// CeriumX's container service extension method for getting services from <see cref="IServiceProvider" />.
 /// </summary>
 public static class ServiceProviderServiceExtensions
 {
     /// <summary>
-    /// 获取指定服务的实例
+    /// Get service of type <typeparamref name="TService"/> from the <see cref="IServiceProvider"/>.
     /// </summary>
-    /// <typeparam name="TService">服务泛型</typeparam>
-    /// <param name="provider">服务提供者 <see cref="IServiceProvider"/></param>
-    /// <returns>服务实例</returns>
-    public static TService? GetInstance<TService>(this IServiceProvider provider) where TService : class
+    /// <typeparam name="TService">The type of service object to get.</typeparam>
+    /// <param name="provider">The <see cref="IServiceProvider"/> to retrieve the service object from.</param>
+    /// <returns>A service object of type <typeparamref name="TService"/> or null if there is no such service.</returns>
+    public static TService? GottenService<TService>(this IServiceProvider provider) where TService : class
         => provider.GetService<TService>();
+
+    /// <summary>
+    /// Get service of type <paramref name="serviceType"/> from the <see cref="IServiceProvider"/>.
+    /// </summary>
+    /// <param name="provider">The <see cref="IServiceProvider"/> to retrieve the service object from.</param>
+    /// <param name="serviceType">An object that specifies the type of service object to get.</param>
+    /// <returns>A service object of type <paramref name="serviceType"/>.</returns>
+    /// <exception cref="System.InvalidOperationException">There is no service of type <paramref name="serviceType"/>.</exception>
+    public static object GottenRequiredService(this IServiceProvider provider, Type serviceType)
+        => provider.GetRequiredService(serviceType);
+
+    /// <summary>
+    /// Get service of type <typeparamref name="TService"/> from the <see cref="IServiceProvider"/>.
+    /// </summary>
+    /// <typeparam name="TService">The type of service object to get.</typeparam>
+    /// <param name="provider">The <see cref="IServiceProvider"/> to retrieve the service object from.</param>
+    /// <returns>A service object of type <typeparamref name="TService"/>.</returns>
+    /// <exception cref="System.InvalidOperationException">There is no service of type <typeparamref name="TService"/>.</exception>
+    public static TService GottenRequiredService<TService>(this IServiceProvider provider) where TService : notnull
+        => provider.GetRequiredService<TService>();
+
+    /// <summary>
+    /// Get an enumeration of services of type <typeparamref name="TService"/> from the <see cref="IServiceProvider"/>.
+    /// </summary>
+    /// <typeparam name="TService">The type of service object to get.</typeparam>
+    /// <param name="provider">The <see cref="IServiceProvider"/> to retrieve the services from.</param>
+    /// <returns>An enumeration of services of type <typeparamref name="TService"/>.</returns>
+    public static IEnumerable<TService> GottenServices<TService>(this IServiceProvider provider)
+        => provider.GetServices<TService>();
+
+
+
+    /// <summary>
+    /// Creates a new <see cref="IServiceScope"/> that can be used to resolve scoped services.
+    /// </summary>
+    /// <param name="provider">The <see cref="IServiceProvider"/> to create the scope from.</param>
+    /// <returns>A <see cref="IServiceScope"/> that can be used to resolve scoped services.</returns>
+    public static IServiceScope CreationScope(this IServiceProvider provider)
+        => provider.CreateScope();
+
+    /// <summary>
+    /// Creates a new <see cref="AsyncServiceScope"/> that can be used to resolve scoped services.
+    /// </summary>
+    /// <param name="provider">The <see cref="IServiceProvider"/> to create the scope from.</param>
+    /// <returns>An <see cref="AsyncServiceScope"/> that can be used to resolve scoped services.</returns>
+    public static AsyncServiceScope CreationAsyncScope(this IServiceProvider provider)
+        => provider.CreateAsyncScope();
+
+    /// <summary>
+    /// Creates a new <see cref="AsyncServiceScope"/> that can be used to resolve scoped services.
+    /// </summary>
+    /// <param name="serviceScopeFactory">The <see cref="IServiceScopeFactory"/> to create the scope from.</param>
+    /// <returns>An <see cref="AsyncServiceScope"/> that can be used to resolve scoped services.</returns>
+    public static AsyncServiceScope CreationAsyncScope(this IServiceScopeFactory serviceScopeFactory)
+        => serviceScopeFactory.CreateAsyncScope();
+
+
+
+
+
 
     /// <summary>
     /// 获取具有指定编号服务的实例
@@ -60,26 +120,5 @@ public static class ServiceProviderServiceExtensions
         }
 
         throw new InvalidOperationException($"No service for type '{nameof(TService)}' has been registered.");
-    }
-
-    /// <summary>
-    /// 获取指定泛型服务与实现的实例
-    /// </summary>
-    /// <typeparam name="TService">服务泛型</typeparam>
-    /// <typeparam name="TImplementation">服务实现泛型</typeparam>
-    /// <param name="provider">服务提供者 <see cref="IServiceProvider"/></param>
-    /// <returns>服务实例</returns>
-    public static TService? GetInstance<TService, TImplementation>(this IServiceProvider provider)
-        where TService : class
-        where TImplementation : class, TService
-    {
-        var implementations = provider.GetServices<TService>();
-
-        if (implementations.Any() is false)
-        {
-            throw new InvalidOperationException($"No service for type '{nameof(TService)}' has been registered.");
-        }
-
-        return implementations.FirstOrDefault(t => t.GetType() == typeof(TImplementation));
     }
 }

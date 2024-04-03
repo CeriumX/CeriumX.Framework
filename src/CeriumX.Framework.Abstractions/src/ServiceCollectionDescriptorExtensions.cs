@@ -37,10 +37,7 @@ public static class ServiceCollectionDescriptorExtensions
         where TService : class
         where TImplementation : class, TService
     {
-        if (collection is null)
-        {
-            throw new ArgumentNullException(nameof(collection));
-        }
+        ArgumentNullException.ThrowIfNull(collection);
 
         collection.TryTryAddSingleton(typeof(TService), typeof(TImplementation));
     }
@@ -55,27 +52,15 @@ public static class ServiceCollectionDescriptorExtensions
     /// <exception cref="ArgumentNullException">当一个空的引用被传递到一个不接受它作为有效参数的方法时，会抛出一个异常。</exception>
     public static void TryTryAddSingleton(this IServiceCollection collection, Type service, Type implementationType)
     {
-        if (collection is null)
-        {
-            throw new ArgumentNullException(nameof(collection));
-        }
-
-        if (service is null)
-        {
-            throw new ArgumentNullException(nameof(service));
-        }
-
-        if (implementationType is null)
-        {
-            throw new ArgumentNullException(nameof(implementationType));
-        }
+        ArgumentNullException.ThrowIfNull(collection);
+        ArgumentNullException.ThrowIfNull(service);
+        ArgumentNullException.ThrowIfNull(implementationType);
 
         int count = collection.Count;
         for (int i = 0; i < count; i++)
         {
             if (collection[i].ServiceType == service && collection[i].ImplementationType == implementationType)
             {
-                // Already added
                 return;
             }
         }

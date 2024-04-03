@@ -33,7 +33,7 @@ public static class CeriumXHostDefinitions
     /// <summary>
     /// WebExtensions Keyword.
     /// </summary>
-    public static readonly string WebKeyword = "WebExtensions";
+    public static readonly string WebKeyword = "WEBExtensions";
 
     /// <summary>
     /// WinFormExtensions Keyword.

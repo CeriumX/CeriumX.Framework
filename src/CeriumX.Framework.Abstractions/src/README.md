@@ -26,6 +26,12 @@
 
 ## 开发日志
 
+### 2024-04-03
+- 去掉单接口与多实现约定性应用接口，相关使用变更为使用.NET8中增加的原生实现；
+- 调整全局关键字定义中的大小写定义；
+- 优化ServiceCollectionDescriptorExtensions中的扩展实现，将条件判断变更为特定实现方法的使用；
+- 优化ServiceProviderServiceExtensions中的扩展实现，研究.NET8中的相关源码实现，并调整此扩展实现。
+
 ### 2024-04-02
 - 调整项目配置和ICeriumXHost接口中的描述。
 
