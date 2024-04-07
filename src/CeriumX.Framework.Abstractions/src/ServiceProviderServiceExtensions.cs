@@ -23,7 +23,7 @@ namespace CeriumX.Framework.Abstractions;
 /// <summary>
 /// CeriumX's container service extension method for getting services from <see cref="IServiceProvider" />.
 /// </summary>
-public static class ServiceProviderServiceExtensions
+public static partial class ServiceProviderServiceExtensions
 {
     /// <summary>
     /// Get service of type <typeparamref name="TService"/> from the <see cref="IServiceProvider"/>.

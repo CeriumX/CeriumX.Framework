@@ -27,7 +27,8 @@
 ## 开发日志
 
 ### 2024-04-07
-- 添加ServiceProviderKeyedServiceExtensions扩展类，增加键值型服务支持，如单接口多实现服务等。
+- 添加ServiceProviderKeyedServiceExtensions扩展类，增加键值型服务支持，如单接口多实现服务等；
+- 优化ServiceCollectionDescriptorExtensions扩展类，增加添加服务容器的扩展支持。
 
 ### 2024-04-03
 - 去掉单接口与多实现约定性应用接口，相关使用变更为使用.NET8中增加的原生实现；
