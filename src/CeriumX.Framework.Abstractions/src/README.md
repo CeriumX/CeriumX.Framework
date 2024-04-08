@@ -28,7 +28,8 @@
 
 ### 2024-04-08
 - 去掉ServiceProviderServiceExtensions中原有根据关键字获取服务的方法；
-- 优化ServiceCollectionDescriptorExtensions中的扩展方法实现。
+- 优化ServiceCollectionDescriptorExtensions中的扩展方法实现；
+- 增加ServiceCollectionDescriptorExtensions.Keyed扩展方法实现。
 
 ### 2024-04-07
 - 添加ServiceProviderKeyedServiceExtensions扩展类，增加键值型服务支持，如单接口多实现服务等；
