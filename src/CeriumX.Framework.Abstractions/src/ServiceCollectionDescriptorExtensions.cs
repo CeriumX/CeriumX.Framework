@@ -29,54 +29,6 @@ namespace CeriumX.Framework.Abstractions;
 public static partial class ServiceCollectionDescriptorExtensions
 {
     /// <summary>
-    /// 尝试添加指定泛型服务与实现的实例到服务容器
-    /// </summary>
-    /// <remarks>当泛型服务已存在相应实现的实例时，将放弃继续添加。</remarks>
-    /// <typeparam name="TService">服务泛型</typeparam>
-    /// <typeparam name="TImplementation">服务实现泛型</typeparam>
-    /// <param name="collection">容器服务集合 <see cref="IServiceCollection"/></param>
-    /// <exception cref="ArgumentNullException">当一个空的引用被传递到一个不接受它作为有效参数的方法时，会抛出一个异常。</exception>
-    public static void TryTryAddSingleton<TService, TImplementation>(this IServiceCollection collection)
-        where TService : class
-        where TImplementation : class, TService
-    {
-        ArgumentNullException.ThrowIfNull(collection);
-
-        collection.TryTryAddSingleton(typeof(TService), typeof(TImplementation));
-    }
-
-    /// <summary>
-    /// 尝试添加指定泛型服务与实现的实例到服务容器
-    /// </summary>
-    /// <remarks>当泛型服务已存在相应实现的实例时，将放弃继续添加。</remarks>
-    /// <param name="collection">容器服务集合 <see cref="IServiceCollection"/></param>
-    /// <param name="service">服务的类型对象</param>
-    /// <param name="implementationType">服务实现的类型对象</param>
-    /// <exception cref="ArgumentNullException">当一个空的引用被传递到一个不接受它作为有效参数的方法时，会抛出一个异常。</exception>
-    public static void TryTryAddSingleton(this IServiceCollection collection, Type service, Type implementationType)
-    {
-        ArgumentNullException.ThrowIfNull(collection);
-        ArgumentNullException.ThrowIfNull(service);
-        ArgumentNullException.ThrowIfNull(implementationType);
-
-        int count = collection.Count;
-        for (int i = 0; i < count; i++)
-        {
-            if (collection[i].ServiceType == service && collection[i].ImplementationType == implementationType)
-            {
-                return;
-            }
-        }
-
-        collection.AddSingleton(service, implementationType);
-    }
-
-
-
-
-
-
-    /// <summary>
     /// Adds the specified <paramref name="service"/> as a <see cref="ServiceLifetime.Transient"/> service
     /// to the <paramref name="collection"/> if the service type hasn't already been registered.
     /// </summary>
@@ -318,5 +270,5 @@ public static partial class ServiceCollectionDescriptorExtensions
         this IServiceCollection services,
         Func<IServiceProvider, TService> implementationFactory)
         where TService : class
-        => services.TryAddSingleton<TService>(implementationFactory);
+        => services.TryAddSingleton(implementationFactory);
 }
