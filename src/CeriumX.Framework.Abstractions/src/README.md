@@ -26,6 +26,9 @@
 
 ## 开发日志
 
+### 2024-04-08
+- 去掉ServiceProviderServiceExtensions中原有根据关键字获取服务的方法。
+
 ### 2024-04-07
 - 添加ServiceProviderKeyedServiceExtensions扩展类，增加键值型服务支持，如单接口多实现服务等；
 - 优化ServiceCollectionDescriptorExtensions扩展类，增加添加服务容器的扩展支持。

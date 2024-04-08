@@ -88,37 +88,4 @@ public static partial class ServiceProviderServiceExtensions
     /// <returns>An <see cref="AsyncServiceScope"/> that can be used to resolve scoped services.</returns>
     public static AsyncServiceScope CreationAsyncScope(this IServiceScopeFactory serviceScopeFactory)
         => serviceScopeFactory.CreateAsyncScope();
-
-
-
-
-
-
-    /// <summary>
-    /// 获取具有指定编号服务的实例
-    /// </summary>
-    /// <typeparam name="TService">服务泛型</typeparam>
-    /// <param name="provider">服务提供者 <see cref="IServiceProvider"/></param>
-    /// <param name="uniqueId">唯一编号</param>
-    /// <returns>服务实例</returns>
-    public static TService? GetInstance<TService>(this IServiceProvider provider, string uniqueId)
-        where TService : class
-    {
-        var implementations = provider.GetServices<TService>();
-
-        if (implementations.Any() is false)
-        {
-            throw new InvalidOperationException($"No service for type '{nameof(TService)}' has been registered.");
-        }
-
-        foreach (var item in implementations)
-        {
-            if (item is IUniqueOfMultipleImplementations result && result.UniqueId == uniqueId)
-            {
-                return item;
-            }
-        }
-
-        throw new InvalidOperationException($"No service for type '{nameof(TService)}' has been registered.");
-    }
 }
