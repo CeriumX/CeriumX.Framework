@@ -53,7 +53,7 @@ internal sealed class CeriumXHostingHostedService : IHostedService
     /// <returns>表示响应当前异步操作的支持对象</returns>
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("1.作为触发 StartAsync 事件时的回调函数。");
+        _logger.LogInformation("Core: 1.作为触发 StartAsync 事件时的回调函数。");
 
         return Task.CompletedTask;
     }
@@ -65,7 +65,7 @@ internal sealed class CeriumXHostingHostedService : IHostedService
     /// <returns>表示响应当前异步操作的支持对象</returns>
     public Task StopAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("4.作为触发 StopAsync 事件时的回调函数。");
+        _logger.LogInformation("Core: 4.作为触发 StopAsync 事件时的回调函数。");
 
         return Task.CompletedTask;
     }
@@ -78,7 +78,7 @@ internal sealed class CeriumXHostingHostedService : IHostedService
     /// </summary>
     private void OnStarted()
     {
-        _logger.LogInformation("2.作为触发 OnStarted 事件时的回调函数。");
+        _logger.LogInformation("Core: 2.作为触发 OnStarted 事件时的回调函数。");
     }
 
     /// <summary>
@@ -86,7 +86,7 @@ internal sealed class CeriumXHostingHostedService : IHostedService
     /// </summary>
     private void OnStopping()
     {
-        _logger.LogInformation("3.作为触发 OnStopping 事件时的回调函数。");
+        _logger.LogInformation("Core: 3.作为触发 OnStopping 事件时的回调函数。");
     }
 
     /// <summary>
@@ -94,6 +94,6 @@ internal sealed class CeriumXHostingHostedService : IHostedService
     /// </summary>
     private void OnStopped()
     {
-        _logger.LogInformation("5.作为触发 OnStopped 事件时的回调函数。");
+        _logger.LogInformation("Core: 5.作为触发 OnStopped 事件时的回调函数。");
     }
 }
