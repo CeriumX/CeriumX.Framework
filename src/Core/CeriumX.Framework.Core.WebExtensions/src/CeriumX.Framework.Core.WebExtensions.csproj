@@ -10,8 +10,8 @@
 		<AssemblyOriginatorKeyFile>CeriumX.Framework.Core.WebExtensions.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<!--<RootNamespace>CeriumX.Framework.Core.WebExtensions</RootNamespace>
-		<AssemblyName>CeriumX.Framework.Core.WebExtensions</AssemblyName>-->
+        <RootNamespace>CeriumX.Framework.Core.WebExtensions</RootNamespace>
+        <!--<AssemblyName>CeriumX.Framework.Core.WebExtensions</AssemblyName>-->
 		<AssemblyVersion>8.0.0</AssemblyVersion>
 		<FileVersion>8.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
@@ -49,9 +49,9 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>升级项目到.NET 8.0版本。</PackageReleaseNotes>
+		<PackageReleaseNotes>升级项目到.NET 8.0框架支持，优化内部定义与编码实现等。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
-		<!--<PackageId>CeriumX.Framework.Core.WebExtensions</PackageId>-->
+		<PackageId>CeriumX.Framework.Core.WebExtensions</PackageId>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -77,6 +77,10 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\CeriumX.Framework.Abstractions\src\CeriumX.Framework.Abstractions.csproj" />
 	</ItemGroup>
 
 </Project>

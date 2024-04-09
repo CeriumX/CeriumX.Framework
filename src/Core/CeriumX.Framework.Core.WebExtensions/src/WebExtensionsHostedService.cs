@@ -32,14 +32,14 @@ internal sealed class WebExtensionsHostedService : IHostedService
     /// Web扩展生命周期事件响应的后台托管服务
     /// </summary>
     /// <param name="logger">日志服务</param>
-    /// <param name="appLifetime">通用主机应用程序生命周期</param>
-    public WebExtensionsHostedService(ILogger<WebExtensionsHostedService> logger, IHostApplicationLifetime appLifetime)
+    /// <param name="lifetime">通用主机应用程序生命周期</param>
+    public WebExtensionsHostedService(ILogger<WebExtensionsHostedService> logger, IHostApplicationLifetime lifetime)
     {
         _logger = logger;
 
-        appLifetime.ApplicationStarted.Register(OnStarted);
-        appLifetime.ApplicationStopping.Register(OnStopping);
-        appLifetime.ApplicationStopped.Register(OnStopped);
+        lifetime.ApplicationStarted.Register(OnStarted);
+        lifetime.ApplicationStopping.Register(OnStopping);
+        lifetime.ApplicationStopped.Register(OnStopped);
     }
 
 
@@ -52,12 +52,7 @@ internal sealed class WebExtensionsHostedService : IHostedService
     /// <returns>表示响应当前异步操作的支持对象</returns>
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Web - 1.作为触发 StartAsync 事件时的回调函数。");
-        _logger.LogDebug("Web - 1.作为触发 StartAsync 事件时的回调函数。");
-        _logger.LogTrace("Web - 1.作为触发 StartAsync 事件时的回调函数。");
-        _logger.LogError("Web - 1.作为触发 StartAsync 事件时的回调函数。");
-        _logger.LogWarning("Web - 1.作为触发 StartAsync 事件时的回调函数。");
-        _logger.LogCritical("Web - 1.作为触发 StartAsync 事件时的回调函数。");
+        _logger.LogInformation("Web: 1.作为触发 StartAsync 事件时的回调函数。");
 
         return Task.CompletedTask;
     }
@@ -69,12 +64,7 @@ internal sealed class WebExtensionsHostedService : IHostedService
     /// <returns>表示响应当前异步操作的支持对象</returns>
     public Task StopAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Web - 4.作为触发 StopAsync 事件时的回调函数。");
-        _logger.LogDebug("Web - 4.作为触发 StopAsync 事件时的回调函数。");
-        _logger.LogTrace("Web - 4.作为触发 StopAsync 事件时的回调函数。");
-        //_logger.LogError("Web - 4.作为触发 StopAsync 事件时的回调函数。");
-        //_logger.LogWarning("Web - 4.作为触发 StopAsync 事件时的回调函数。");
-        //_logger.LogCritical("Web - 4.作为触发 StopAsync 事件时的回调函数。");
+        _logger.LogInformation("Web: 4.作为触发 StopAsync 事件时的回调函数。");
 
         return Task.CompletedTask;
     }
@@ -87,12 +77,7 @@ internal sealed class WebExtensionsHostedService : IHostedService
     /// </summary>
     private void OnStarted()
     {
-        _logger.LogInformation("Web - 2.作为触发 OnStarted 事件时的回调函数。");
-        _logger.LogDebug("Web - 2.作为触发 OnStarted 事件时的回调函数。");
-        _logger.LogTrace("Web - 2.作为触发 OnStarted 事件时的回调函数。");
-        _logger.LogError("Web - 2.作为触发 OnStarted 事件时的回调函数。");
-        _logger.LogWarning("Web - 2.作为触发 OnStarted 事件时的回调函数。");
-        _logger.LogCritical("Web - 2.作为触发 OnStarted 事件时的回调函数。");
+        _logger.LogInformation("Web: 2.作为触发 OnStarted 事件时的回调函数。");
     }
 
     /// <summary>
@@ -100,12 +85,7 @@ internal sealed class WebExtensionsHostedService : IHostedService
     /// </summary>
     private void OnStopping()
     {
-        _logger.LogInformation("Web - 3.作为触发 OnStopping 事件时的回调函数。");
-        _logger.LogDebug("Web - 3.作为触发 OnStopping 事件时的回调函数。");
-        _logger.LogTrace("Web - 3.作为触发 OnStopping 事件时的回调函数。");
-        _logger.LogError("Web - 3.作为触发 OnStopping 事件时的回调函数。");
-        _logger.LogWarning("Web - 3.作为触发 OnStopping 事件时的回调函数。");
-        _logger.LogCritical("Web - 3.作为触发 OnStopping 事件时的回调函数。");
+        _logger.LogInformation("Web: 3.作为触发 OnStopping 事件时的回调函数。");
     }
 
     /// <summary>
@@ -113,11 +93,6 @@ internal sealed class WebExtensionsHostedService : IHostedService
     /// </summary>
     private void OnStopped()
     {
-        _logger.LogInformation("Web - 5.作为触发 OnStopped 事件时的回调函数。");
-        _logger.LogDebug("Web - 5.作为触发 OnStopped 事件时的回调函数。");
-        _logger.LogTrace("Web - 5.作为触发 OnStopped 事件时的回调函数。");
-        //_logger.LogError("Web - 5.作为触发 OnStopped 事件时的回调函数。");
-        //_logger.LogWarning("Web - 5.作为触发 OnStopped 事件时的回调函数。");
-        //_logger.LogCritical("Web - 5.作为触发 OnStopped 事件时的回调函数。");
+        _logger.LogInformation("Web: 5.作为触发 OnStopped 事件时的回调函数。");
     }
 }
