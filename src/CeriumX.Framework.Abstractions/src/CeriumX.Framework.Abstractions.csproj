@@ -49,7 +49,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>GenericHost 混合开发 Framework Asp.NetCore WPF WinForm Modularity 模块化 组合视图 WebGL Web 数据可视化</PackageTags>
-		<PackageReleaseNotes>升级项目到.NET 8.0版本。</PackageReleaseNotes>
+		<PackageReleaseNotes>升级项目到.NET 8.0框架支持，优化内部定义与编码实现等。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<PackageId>CeriumX.Framework.Abstractions</PackageId>
 	</PropertyGroup>
