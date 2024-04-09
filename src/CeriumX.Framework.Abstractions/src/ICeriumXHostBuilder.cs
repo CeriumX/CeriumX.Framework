@@ -26,49 +26,57 @@ namespace CeriumX.Framework.Abstractions;
 public interface ICeriumXHostBuilder
 {
     /// <summary>
-    /// 用于数据交换或属性信息等的字典
+    /// A central location for sharing state between components during the host building process.
     /// </summary>
     IDictionary<object, object> Properties { get; }
 
     /// <summary>
-    /// 主机配置
+    /// Set up the configuration for the builder itself. This will be used to initialize the <see cref="IHostEnvironment"/>
+    /// for use later in the build process. This can be called multiple times and the results will be additive.
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IConfigurationBuilder"/> that will be used
+    /// to construct the <see cref="IConfiguration"/> for the host.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     ICeriumXHostBuilder ConfigureHostConfiguration(Action<IConfigurationBuilder> configureDelegate);
 
     /// <summary>
-    /// 应用程序配置
+    /// Sets up the configuration for the remainder of the build process and application. This can be called multiple times and
+    /// the results will be additive. The results will be available at <see cref="CeriumXHostBuilderContext.Configuration"/> for
+    /// subsequent operations, as well as in <see cref="IHost.Services"/>.
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IConfigurationBuilder"/> that will be used
+    /// to construct the <see cref="IConfiguration"/> for the application.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     ICeriumXHostBuilder ConfigureAppConfiguration(Action<CeriumXHostBuilderContext, IConfigurationBuilder> configureDelegate);
 
     /// <summary>
-    /// 容器服务
+    /// Adds services to the container. This can be called multiple times and the results will be additive.
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IServiceCollection"/> that will be used
+    /// to construct the <see cref="IServiceProvider"/>.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     ICeriumXHostBuilder ConfigureServices(Action<CeriumXHostBuilderContext, IServiceCollection> configureDelegate);
 
     /// <summary>
-    /// 生成 CeriumX Host
+    /// Run the given actions to initialize the host. This can only be called once.
     /// </summary>
     /// <returns>An initialized <see cref="ICeriumXHost"/>.</returns>
     ICeriumXHost Build();
 
 
+
     /// <summary>
-    /// CeriumX Host 实例
+    /// 配置 CeriumX Host 实例化委托，用于框架之外的全局范围使用。
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">通过此配置委托，可以获得创建后的 CeriumX Host 实例化对象。</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     ICeriumXHostBuilder ConfigureCeriumXHostInstance(Action<ICeriumXHost> configureDelegate);
 
     /// <summary>
-    /// 在建造者创建之前
+    /// 在 CeriumX Host 实例化之前，往依赖服务容器中注入服务。
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IServiceProvider"/> that will be used
+    /// to construct the <see cref="IServiceCollection"/>.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     ICeriumXHostBuilder ConfigureBeforeBuilder(Action<IServiceProvider> configureDelegate);
 }

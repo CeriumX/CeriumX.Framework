@@ -26,6 +26,10 @@
 
 ## 开发日志
 
+### 2024-04-09
+- 优化所有接口或功能类中的描述信息；
+- 调整部门编码实现，修正个别错误问题。
+
 ### 2024-04-08
 - 去掉ServiceProviderServiceExtensions中原有根据关键字获取服务的方法；
 - 优化ServiceCollectionDescriptorExtensions中的扩展方法实现；

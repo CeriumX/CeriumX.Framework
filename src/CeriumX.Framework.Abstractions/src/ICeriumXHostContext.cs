@@ -21,12 +21,12 @@
 namespace CeriumX.Framework.Abstractions;
 
 /// <summary>
-/// CeriumX Host 上下文接口
+/// CeriumX Host context interface
 /// </summary>
 public interface ICeriumXHostContext
 {
     /// <summary>
-    /// 容器服务
+    /// Gets the services configured for the program (for example, using <see cref="M:CeriumXHostBuilder.ConfigureServices(Action&lt;CeriumXHostBuilderContext,IServiceCollection&gt;)" />).
     /// </summary>
     IServiceProvider Services { get; }
 }

@@ -21,7 +21,7 @@
 namespace CeriumX.Framework.Abstractions;
 
 /// <summary>
-/// CeriumX Host 建造者上下文
+/// Context containing the common services on the <see cref="ICeriumXHost" />. Some properties may be null until set by the <see cref="ICeriumXHost" />.
 /// </summary>
 public sealed class CeriumXHostBuilderContext
 {
@@ -39,17 +39,25 @@ public sealed class CeriumXHostBuilderContext
 
 
     /// <summary>
-    /// <see cref="IHostEnvironment"/>
+    /// The <see cref="IHostEnvironment" /> initialized by the <see cref="ICeriumXHost" />.
     /// </summary>
-    internal IHostEnvironment HostingEnvironment => _hostBuilderContext.HostingEnvironment;
+    public IHostEnvironment HostingEnvironment
+    {
+        get => _hostBuilderContext.HostingEnvironment;
+        set => _hostBuilderContext.HostingEnvironment = value;
+    }
 
     /// <summary>
-    /// <see cref="IConfiguration"/>
+    /// The <see cref="IConfiguration" /> containing the merged configuration of the application and the <see cref="ICeriumXHost" />.
     /// </summary>
-    public IConfiguration Configuration => _hostBuilderContext.Configuration;
+    public IConfiguration Configuration
+    {
+        get => _hostBuilderContext.Configuration;
+        set => _hostBuilderContext.Configuration = value;
+    }
 
     /// <summary>
-    /// 用于数据交换或属性信息等的字典
+    /// A central location for sharing state between components during the host building process.
     /// </summary>
     public IDictionary<object, object> Properties => _hostBuilderContext.Properties;
 }

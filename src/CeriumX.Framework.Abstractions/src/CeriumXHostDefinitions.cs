@@ -38,8 +38,8 @@ public static class CeriumXHostDefinitions
     /// <summary>
     /// WinFormExtensions Keyword.
     /// </summary>
-
     public static readonly string WinFormKeyword = "WinFormExtensions";
+
     /// <summary>
     /// WPFExtensions Keyword.
     /// </summary>

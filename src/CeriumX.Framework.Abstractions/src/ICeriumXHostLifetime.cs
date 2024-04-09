@@ -26,17 +26,19 @@ namespace CeriumX.Framework.Abstractions;
 public interface ICeriumXHostLifetime
 {
     /// <summary>
-    /// CeriumX Host 启动后触发
+    /// Triggered when the CeriumX Host has fully started.
     /// </summary>
     CancellationToken CeriumXHostStarted { get; }
 
     /// <summary>
-    /// CeriumX Host 停止时触发
+    /// Triggered when the CeriumX Host is starting a graceful shutdown.
+    /// Shutdown will block until all callbacks registered on this token have completed.
     /// </summary>
     CancellationToken CeriumXHostStopping { get; }
 
     /// <summary>
-    /// CeriumX Host 停止后触发
+    /// Triggered when the CeriumX Host has completed a graceful shutdown.
+    /// The application will not exit until all callbacks registered on this token have completed.
     /// </summary>
     CancellationToken CeriumXHostStopped { get; }
 }

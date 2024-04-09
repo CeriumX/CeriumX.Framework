@@ -50,6 +50,5 @@ public interface IMainWindowLifetime
     /// </summary>
     /// <typeparam name="TForm">子窗体泛型</typeparam>
     /// <param name="subform">子窗体（必须是所支持的UI窗体）</param>
-    void ConfigureOwner<TForm>(TForm subform) where TForm
-        : class;
+    void ConfigureOwner<TForm>(TForm subform) where TForm : class;
 }

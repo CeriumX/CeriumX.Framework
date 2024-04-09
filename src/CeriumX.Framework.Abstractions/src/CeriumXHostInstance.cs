@@ -21,12 +21,12 @@
 namespace CeriumX.Framework.Abstractions;
 
 /// <summary>
-/// CeriumX Host 单例
+/// CeriumX Host 单例模式
 /// </summary>
 public static class CeriumXHostInstance
 {
     /// <summary>
-    /// CeriumX Host
+    /// CeriumX Host default instance.
     /// </summary>
     public static ICeriumXHost? Default { get; private set; }
 
