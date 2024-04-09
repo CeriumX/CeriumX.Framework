@@ -19,6 +19,7 @@
 // 修改内容：
 // ========================================================================
 global using CeriumX.Framework.Abstractions;
+global using CeriumX.Framework.Core.Internal;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Hosting;

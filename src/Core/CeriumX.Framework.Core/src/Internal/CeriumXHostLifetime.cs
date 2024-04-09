@@ -23,35 +23,28 @@ namespace CeriumX.Framework.Core.Internal;
 /// <summary>
 /// CeriumX Host 生命周期事件
 /// </summary>
-internal sealed class CeriumXHostLifetime : ICeriumXHostLifetime
+/// <param name="lifetime">通用主机应用程序生命周期</param>
+internal sealed class CeriumXHostLifetime(IHostApplicationLifetime lifetime) : ICeriumXHostLifetime
 {
-    private readonly IHostApplicationLifetime _applicationLifetime;
-
-
-    /// <summary>
-    /// CeriumX Host 生命周期事件
-    /// </summary>
-    /// <param name="lifetime">通用主机应用程序生命周期</param>
-    public CeriumXHostLifetime(IHostApplicationLifetime lifetime)
-    {
-        _applicationLifetime = lifetime;
-    }
+    private readonly IHostApplicationLifetime _applicationLifetime = lifetime;
 
 
     #region 接口实现[ICeriumXHostLifetime]
 
     /// <summary>
-    /// CeriumX Host 启动后触发
+    /// Triggered when the CeriumX Host has fully started.
     /// </summary>
     public CancellationToken CeriumXHostStarted => _applicationLifetime.ApplicationStarted;
 
     /// <summary>
-    /// CeriumX Host 停止时触发
+    /// Triggered when the CeriumX Host is starting a graceful shutdown.
+    /// Shutdown will block until all callbacks registered on this token have completed.
     /// </summary>
     public CancellationToken CeriumXHostStopping => _applicationLifetime.ApplicationStopping;
 
     /// <summary>
-    /// CeriumX Host 停止后触发
+    /// Triggered when the CeriumX Host has completed a graceful shutdown.
+    /// The application will not exit until all callbacks registered on this token have completed.
     /// </summary>
     public CancellationToken CeriumXHostStopped => _applicationLifetime.ApplicationStopped;
 

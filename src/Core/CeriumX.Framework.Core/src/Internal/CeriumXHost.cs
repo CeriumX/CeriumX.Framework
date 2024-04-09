@@ -23,50 +23,45 @@ namespace CeriumX.Framework.Core.Internal;
 /// <summary>
 /// CeriumX Host
 /// </summary>
-internal sealed class CeriumXHost : ICeriumXHost
+/// <param name="host">The <see cref="IHost"/> instance.</param>
+internal sealed class CeriumXHost(IHost host) : ICeriumXHost
 {
-    private readonly IHost _host;
-
-
-    /// <summary>
-    /// CeriumX Host
-    /// </summary>
-    /// <param name="host">The <see cref="IHost"/> instance.</param>
-    public CeriumXHost(IHost host) => _host = host;
+    private readonly IHost _host = host;
 
 
     #region 接口实现[ICeriumXHostContext]
 
     /// <summary>
-    /// 容器服务
+    /// Gets the services configured for the program (for example, using <see cref="M:CeriumXHostBuilder.ConfigureServices(Action&lt;CeriumXHostBuilderContext,IServiceCollection&gt;)" />).
     /// </summary>
     public IServiceProvider Services => _host.Services;
 
     #endregion
 
+
     #region 接口实现[ICeriumXHost]
 
     /// <summary>
-    /// 启动
+    /// 优雅地启动程序
     /// </summary>
-    /// <param name="cancellationToken">取消令牌</param>
+    /// <param name="cancellationToken">用于终止程序启动</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    public async Task StartAsync(CancellationToken cancellationToken = default)
-        => await _host.RunAsync(cancellationToken).ConfigureAwait(false);
+    public async Task StartAsync(CancellationToken cancellationToken = default) =>
+        await _host.RunAsync(cancellationToken).ConfigureAwait(false);
 
     /// <summary>
-    /// 停止
+    /// 优雅地停止程序
     /// </summary>
-    /// <param name="cancellationToken">取消令牌</param>
+    /// <param name="cancellationToken">用于指示何时优雅地停止程序</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    public async Task StopAsync(CancellationToken cancellationToken = default)
-        => await _host.StopAsync(cancellationToken).ConfigureAwait(false);
+    public async Task StopAsync(CancellationToken cancellationToken = default) =>
+        await _host.StopAsync(cancellationToken).ConfigureAwait(false);
+
+    #endregion
+
 
     /// <summary>
     /// 资源释放
     /// </summary>
     public void Dispose() => _host.Dispose();
-
-    #endregion
-
 }

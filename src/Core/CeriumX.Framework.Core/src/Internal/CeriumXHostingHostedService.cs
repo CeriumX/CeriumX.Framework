@@ -33,14 +33,14 @@ internal sealed class CeriumXHostingHostedService : IHostedService
     /// 应用程序生命周期事件响应的后台托管服务
     /// </summary>
     /// <param name="logger">日志服务</param>
-    /// <param name="appLifetime">通用主机应用程序生命周期</param>
-    public CeriumXHostingHostedService(ILogger<CeriumXHostingHostedService> logger, IHostApplicationLifetime appLifetime)
+    /// <param name="lifetime">通用主机应用程序生命周期</param>
+    public CeriumXHostingHostedService(ILogger<CeriumXHostingHostedService> logger, IHostApplicationLifetime lifetime)
     {
         _logger = logger;
 
-        appLifetime.ApplicationStarted.Register(OnStarted);
-        appLifetime.ApplicationStopping.Register(OnStopping);
-        appLifetime.ApplicationStopped.Register(OnStopped);
+        lifetime.ApplicationStarted.Register(OnStarted);
+        lifetime.ApplicationStopping.Register(OnStopping);
+        lifetime.ApplicationStopped.Register(OnStopped);
     }
 
 

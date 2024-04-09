@@ -23,24 +23,11 @@ namespace CeriumX.Framework.Core.Internal;
 /// <summary>
 /// CeriumX Host Builder
 /// </summary>
-internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
+/// <param name="args">命令行参数</param>
+internal sealed class CeriumXHostBuilder(string[]? args) : ICeriumXHostBuilder, IServiceProvider
 {
-    private readonly IHostBuilder _hostBuilder;
-    private readonly List<Action<ICeriumXHost>> _cfgHostInstance = new();
-
-
-    /// <summary>
-    /// CeriumX Host Builder
-    /// </summary>
-    /// <param name="args">命令行参数</param>
-    public CeriumXHostBuilder(string[] args)
-    {
-        _hostBuilder = Host.CreateDefaultBuilder(args)
-                           .ConfigureHostConfiguration(config =>
-                           {
-                               //config.SetBasePath(Directory.GetCurrentDirectory());
-                               config.AddJsonFile("hostSettings.json", optional: true, reloadOnChange: true);
-                           })
+    private readonly List<Action<ICeriumXHost>> _hostInstanceDelegate = [];
+    private readonly IHostBuilder _hostBuilder = Host.CreateDefaultBuilder(args)
                            .ConfigureServices((context, services) =>
                            {
                                services.AddHostedService<CeriumXHostingHostedService>();
@@ -48,27 +35,22 @@ internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
                            .ConfigureServices((services) =>
                            {
                                services.AddSingleton<ICeriumXHostLifetime, CeriumXHostLifetime>();
-                           })
-                           .ConfigureLogging((context, logging) =>
-                           {
-                               // do something.
-                               //logging.ClearProviders();
-                               //logging.AddConsole();
                            });
-    }
 
 
     #region 接口实现[ICeriumXHostBuilder]
 
     /// <summary>
-    /// 用于数据交换或属性信息等的字典
+    /// A central location for sharing state between components during the host building process.
     /// </summary>
     public IDictionary<object, object> Properties => _hostBuilder.Properties;
 
     /// <summary>
-    /// 主机配置
+    /// Set up the configuration for the builder itself. This will be used to initialize the <see cref="IHostEnvironment"/>
+    /// for use later in the build process. This can be called multiple times and the results will be additive.
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IConfigurationBuilder"/> that will be used
+    /// to construct the <see cref="IConfiguration"/> for the host.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public ICeriumXHostBuilder ConfigureHostConfiguration(Action<IConfigurationBuilder> configureDelegate)
     {
@@ -77,9 +59,12 @@ internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
     }
 
     /// <summary>
-    /// 应用程序配置
+    /// Sets up the configuration for the remainder of the build process and application. This can be called multiple times and
+    /// the results will be additive. The results will be available at <see cref="CeriumXHostBuilderContext.Configuration"/> for
+    /// subsequent operations, as well as in <see cref="IHost.Services"/>.
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IConfigurationBuilder"/> that will be used
+    /// to construct the <see cref="IConfiguration"/> for the application.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public ICeriumXHostBuilder ConfigureAppConfiguration(Action<CeriumXHostBuilderContext, IConfigurationBuilder> configureDelegate)
     {
@@ -92,9 +77,10 @@ internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
     }
 
     /// <summary>
-    /// 容器服务
+    /// Adds services to the container. This can be called multiple times and the results will be additive.
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IServiceCollection"/> that will be used
+    /// to construct the <see cref="IServiceProvider"/>.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public ICeriumXHostBuilder ConfigureServices(Action<CeriumXHostBuilderContext, IServiceCollection> configureDelegate)
     {
@@ -107,7 +93,7 @@ internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
     }
 
     /// <summary>
-    /// 生成 CeriumX Host
+    /// Run the given actions to initialize the host. This can only be called once.
     /// </summary>
     /// <returns>An initialized <see cref="ICeriumXHost"/>.</returns>
     public ICeriumXHost Build()
@@ -115,7 +101,7 @@ internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
         IHost host = _hostBuilder.Build();
         ICeriumXHost app = new CeriumXHost(host);
 
-        foreach (Action<ICeriumXHost> item in _cfgHostInstance)
+        foreach (Action<ICeriumXHost> item in _hostInstanceDelegate)
         {
             item?.Invoke(app);
         }
@@ -124,21 +110,23 @@ internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
     }
 
 
+
     /// <summary>
-    /// CeriumX Host 实例
+    /// 配置 CeriumX Host 实例化委托，用于框架之外的全局范围使用。
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">通过此配置委托，可以获得创建后的 CeriumX Host 实例化对象。</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public ICeriumXHostBuilder ConfigureCeriumXHostInstance(Action<ICeriumXHost> configureDelegate)
     {
-        _cfgHostInstance.Add(configureDelegate ?? throw new ArgumentNullException(nameof(configureDelegate)));
+        _hostInstanceDelegate.Add(configureDelegate ?? throw new ArgumentNullException(nameof(configureDelegate)));
         return this;
     }
 
     /// <summary>
-    /// 在建造者创建之前
+    /// 在 CeriumX Host 实例化之前，往依赖服务容器中注入服务。
     /// </summary>
-    /// <param name="configureDelegate">配置委托</param>
+    /// <param name="configureDelegate">The delegate for configuring the <see cref="IServiceProvider"/> that will be used
+    /// to construct the <see cref="IServiceCollection"/>.</param>
     /// <returns>The same instance of the <see cref="ICeriumXHostBuilder"/> for chaining.</returns>
     public ICeriumXHostBuilder ConfigureBeforeBuilder(Action<IServiceProvider> configureDelegate)
     {
@@ -148,21 +136,17 @@ internal sealed class CeriumXHostBuilder : ICeriumXHostBuilder, IServiceProvider
 
     #endregion
 
+
     #region 接口实现[IServiceProvider]
 
     /// <summary>
-    /// 获取指定类型的服务对象
+    /// Gets the service object of the specified type.
     /// </summary>
-    /// <param name="serviceType">要获得的服务类型</param>
-    /// <returns>所产生的服务</returns>
+    /// <param name="serviceType">An object that specifies the type of service object to get.</param>
+    /// <returns>A service object of type serviceType. -or- null if there is no service object of type serviceType.</returns>
     public object? GetService(Type serviceType)
     {
-        if (serviceType == typeof(IHostBuilder))
-        {
-            return _hostBuilder;
-        }
-
-        return default;
+        return serviceType == typeof(IHostBuilder) ? _hostBuilder : default;
     }
 
     #endregion

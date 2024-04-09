@@ -21,20 +21,46 @@
 namespace CeriumX.Framework.Core;
 
 /// <summary>
-/// 提供方便的方法来创建具有预设默认值的 <see cref="ICeriumXHostBuilder"/> 的实例。
+/// Provides convenience methods for creating instances of <see cref="ICeriumXHostBuilder"/> with pre-configured defaults.
 /// </summary>
 public static class CeriumXHost
 {
     /// <summary>
-    /// 用预先配置的默认值初始化一个 <see cref="Internal.CeriumXHostBuilder"/> 类的新实例。
+    /// Initializes a new instance of the <see cref="CeriumXHostBuilder"/> class with pre-configured defaults.
     /// </summary>
-    /// <returns>The <see cref="ICeriumXHostBuilder"/> instance。</returns>
-    public static ICeriumXHostBuilder CreateDefaultBuilder() => CreateDefaultBuilder();
+    /// <remarks>
+    ///   The following defaults are applied to the returned <see cref="CeriumXHostBuilder"/>:
+    ///   <list type="bullet">
+    ///     <item><description>set the <see cref="IHostEnvironment.ContentRootPath"/> to the result of <see cref="Directory.GetCurrentDirectory()"/></description></item>
+    ///     <item><description>load host <see cref="IConfiguration"/> from "DOTNET_" prefixed environment variables</description></item>
+    ///     <item><description>load app <see cref="IConfiguration"/> from 'appsettings.json' and 'appsettings.[<see cref="IHostEnvironment.EnvironmentName"/>].json'</description></item>
+    ///     <item><description>load app <see cref="IConfiguration"/> from User Secrets when <see cref="IHostEnvironment.EnvironmentName"/> is 'Development' using the entry assembly</description></item>
+    ///     <item><description>load app <see cref="IConfiguration"/> from environment variables</description></item>
+    ///     <item><description>configure the <see cref="ILoggerFactory"/> to log to the console, debug, and event source output</description></item>
+    ///     <item><description>enables scope validation on the dependency injection container when <see cref="IHostEnvironment.EnvironmentName"/> is 'Development'</description></item>
+    ///   </list>
+    /// </remarks>
+    /// <returns>The initialized <see cref="ICeriumXHostBuilder"/>.</returns>
+    public static ICeriumXHostBuilder CreateDefaultBuilder() => CreateDefaultBuilder(args: null);
 
     /// <summary>
-    /// 用预先配置的默认值初始化一个 <see cref="Internal.CeriumXHostBuilder"/> 类的新实例。
+    /// Initializes a new instance of the <see cref="CeriumXHostBuilder"/> class with pre-configured defaults.
     /// </summary>
-    /// <param name="args">命令行参数</param>
-    /// <returns>The <see cref="ICeriumXHostBuilder"/> instance。</returns>
-    public static ICeriumXHostBuilder CreateDefaultBuilder(string[] args) => new Internal.CeriumXHostBuilder(args);
+    /// <remarks>
+    ///   The following defaults are applied to the returned <see cref="CeriumXHostBuilder"/>:
+    ///   <list type="bullet">
+    ///     <item><description>set the <see cref="IHostEnvironment.ContentRootPath"/> to the result of <see cref="Directory.GetCurrentDirectory()"/></description></item>
+    ///     <item><description>load host <see cref="IConfiguration"/> from "DOTNET_" prefixed environment variables</description></item>
+    ///     <item><description>load host <see cref="IConfiguration"/> from supplied command line args</description></item>
+    ///     <item><description>load app <see cref="IConfiguration"/> from 'appsettings.json' and 'appsettings.[<see cref="IHostEnvironment.EnvironmentName"/>].json'</description></item>
+    ///     <item><description>load app <see cref="IConfiguration"/> from User Secrets when <see cref="IHostEnvironment.EnvironmentName"/> is 'Development' using the entry assembly</description></item>
+    ///     <item><description>load app <see cref="IConfiguration"/> from environment variables</description></item>
+    ///     <item><description>load app <see cref="IConfiguration"/> from supplied command line args</description></item>
+    ///     <item><description>configure the <see cref="ILoggerFactory"/> to log to the console, debug, and event source output</description></item>
+    ///     <item><description>enables scope validation on the dependency injection container when <see cref="IHostEnvironment.EnvironmentName"/> is 'Development'</description></item>
+    ///   </list>
+    /// </remarks>
+    /// <param name="args">The command line args.</param>
+    /// <returns>The initialized <see cref="ICeriumXHostBuilder"/>.</returns>
+    public static ICeriumXHostBuilder CreateDefaultBuilder(string[]? args) => new CeriumXHostBuilder(args);
 }
