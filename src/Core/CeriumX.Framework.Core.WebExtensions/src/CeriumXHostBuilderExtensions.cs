@@ -50,13 +50,10 @@ public static class CeriumXHostBuilderExtensions
         {
             IHostBuilder? builder = configBuilder.GetService<IHostBuilder>();
 
-            if (builder != null)
+            builder?.ConfigureWebHostDefaults(webBuilder =>
             {
-                builder.ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-            }
+                webBuilder.UseStartup<Startup>();
+            });
         });
     }
 }
